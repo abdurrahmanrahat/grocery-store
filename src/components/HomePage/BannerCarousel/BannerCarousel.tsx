@@ -1,6 +1,6 @@
 import BannerImage from "@/asserts/home/banner.jpg";
 import Image from "next/image";
-import Carousel from "./Carousel";
+import CarouselSection from "./CarouselSection";
 
 const BannerCarousel = () => {
   return (
@@ -22,7 +22,7 @@ const BannerCarousel = () => {
 
         {/* slides */}
         <div className="w-2/3">
-          <Carousel />
+          <CarouselSection />
         </div>
       </div>
     </div>
