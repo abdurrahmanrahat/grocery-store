@@ -23,7 +23,7 @@ const TopCategory = () => {
 
         {/* card */}
         <div className="md:flex justify-between gap-6 mt-12">
-          <div className="relative">
+          <div className="relative mb-4 md:mb-0">
             <Image src={CarpImg} className="rounded-md" alt="carp image" />
             <h2 className="absolute bottom-6 left-6 text-[28px] font-semibold text-white">
               Carp Fishes
@@ -49,7 +49,7 @@ const TopCategory = () => {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative mt-4 md:mt-0">
             <Image src={HilsaImg} className="rounded-md" alt="hilsa image" />
             <h2 className="absolute bottom-6 left-6 text-[28px] font-semibold text-white">
               Hilsa Fishes

@@ -6,14 +6,18 @@ const BannerCarousel = () => {
   return (
     <div className="relative">
       <div className="">
-        <Image src={BannerImage} className="w-full" alt="banner image" />
+        <Image
+          src={BannerImage}
+          className="w-full h-[400px] md:h-full"
+          alt="banner image"
+        />
       </div>
-      <div className="absolute top-0 bg-[#01093765] w-full h-full flex flex-col justify-center items-center gap-8">
-        <h2 className="text-[32px] font-semibold max-w-[40ch] text-[#fff] text-center mx-auto">
+      <div className="absolute top-0 bg-[#01093765] w-full h-full flex flex-col justify-center items-center gap-2 md:gap-8">
+        <h2 className="text-[20px] md:text-[24px] lg:text-[32px] font-semibold max-w-[40ch] text-[#fff] text-center mx-auto">
           Vast selection, impeccable freshness, knowledgeable staff- a seafood
           enthusiast&apos;s dream come true
         </h2>
-        <p className="text-[#ECE8E7] max-w-[58ch]">
+        <p className="text-[#ECE8E7] max-w-[58ch] hidden lg:block">
           Exceptional ambiance, superior service, and gourmet offerings—this
           establishment redefines culinary excellence. A must-visit destination
           and an oasis of culinary bliss awaits, where perfection meets
