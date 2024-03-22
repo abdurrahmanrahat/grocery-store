@@ -1,9 +1,9 @@
-import { Button } from "@mui/material";
+import BannerCarousel from "@/components/HomePage/BannerCarousel/BannerCarousel";
 
 const HomePage = () => {
   return (
     <div>
-      Home Page <Button>Text</Button>
+      <BannerCarousel />
     </div>
   );
 };
