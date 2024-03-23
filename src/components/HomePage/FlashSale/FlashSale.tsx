@@ -1,3 +1,4 @@
+import { TFish } from "@/types";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
 import {
@@ -42,71 +43,74 @@ const FlashSale = async () => {
         {/* card */}
         <div className="mt-8">
           <Grid container spacing={2}>
-            {fishes?.slice(0, 4).map((fish) => (
-              <Grid item key={fish._id} md={3}>
-                <Card
-                  sx={
-                    {
-                      // border: "none",
+            {fishes &&
+              fishes?.slice(0, 4).map((fish: TFish) => (
+                <Grid item key={fish._id} md={6} lg={3}>
+                  <Card
+                    sx={
+                      {
+                        // border: "none",
+                      }
                     }
-                  }
-                >
-                  <Box
-                    sx={{
-                      position: "relative",
-                    }}
                   >
-                    <Image
-                      src={fish.image[0]}
-                      width={500}
-                      height={100}
-                      alt="Image"
-                    />
                     <Box
                       sx={{
-                        position: "absolute",
-                        top: "10px",
-                        left: "10px",
-                        backgroundColor: "primary.dark",
-                        padding: "8px",
-                        color: "primary.light",
-                        fontSize: "12px",
-                        borderRadius: "10px",
+                        position: "relative",
                       }}
                     >
-                      -{fish.discountPercentage}%
-                    </Box>
-                  </Box>
-                  <CardContent>
-                    <Typography variant="h6" component="div" fontWeight={600}>
-                      {fish.title}
-                    </Typography>
-                  </CardContent>
-                  <CardActions
-                    sx={{
-                      justifyContent: "space-between",
-                      px: 2,
-                      paddingBottom: "20px",
-                    }}
-                  >
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      sx={{
-                        display: "flex",
-                        gap: "8px",
-                      }}
-                    >
-                      <Box fontWeight={600}>${fish.price}</Box>{" "}
-                      <Box color="primary.dark" fontWeight={600}>
-                        ${fish.price - 20}
+                      <Image
+                        src={fish.image[0]}
+                        width={500}
+                        height={100}
+                        alt="Image"
+                      />
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          top: "10px",
+                          left: "10px",
+                          backgroundColor: "primary.dark",
+                          padding: "8px",
+                          color: "primary.light",
+                          fontSize: "12px",
+                          borderRadius: "10px",
+                        }}
+                      >
+                        -{fish.discountPercentage}%
                       </Box>
-                    </Typography>
-                    <AddCircleOutlineIcon />
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
+                    </Box>
+                    <CardContent>
+                      <Typography variant="h6" component="div" fontWeight={600}>
+                        {fish.title}
+                      </Typography>
+                    </CardContent>
+                    <CardActions
+                      sx={{
+                        justifyContent: "space-between",
+                        px: 2,
+                        paddingBottom: "20px",
+                      }}
+                    >
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{
+                          display: "flex",
+                          gap: "8px",
+                        }}
+                      >
+                        <Box fontWeight={600}>
+                          <del>${fish.price}</del>
+                        </Box>
+                        <Box color="primary.dark" fontWeight={600}>
+                          ${Number(fish.price) - 20}
+                        </Box>
+                      </Typography>
+                      <AddCircleOutlineIcon />
+                    </CardActions>
+                  </Card>
+                </Grid>
+              ))}
           </Grid>
         </div>
       </Container>
