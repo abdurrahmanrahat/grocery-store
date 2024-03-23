@@ -18,7 +18,8 @@ export const theme = createTheme({
       },
       styleOverrides: {
         root: {
-          padding: "8px 24px",
+          padding: "8px 20px",
+          textTransform: "capitalize",
         },
       },
     },

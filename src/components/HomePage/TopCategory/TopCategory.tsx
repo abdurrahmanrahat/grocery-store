@@ -1,15 +1,15 @@
-import { Box, Button, Container } from "@mui/material";
-
 import CarpImg from "@/asserts/home/category/carp.png";
 import HilsaImg from "@/asserts/home/category/hilsa.png";
 import MahiImg from "@/asserts/home/category/mahi.png";
 import salmonImg from "@/asserts/home/category/salmon.png";
+import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
+import { Box, Button, Container } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
 const TopCategory = () => {
   return (
-    <div className="my-[24px]">
+    <div className="my-16 md:my-24">
       <Container>
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-[36px] font-semibold text-[#010937]">
@@ -67,7 +67,7 @@ const TopCategory = () => {
             component={Link}
             href="#"
           >
-            <Box>View All</Box>
+            <Box>View All</Box> <ChevronRightOutlinedIcon />
           </Button>
         </div>
       </Container>
