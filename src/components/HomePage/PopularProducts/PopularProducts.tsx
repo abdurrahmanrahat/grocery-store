@@ -14,20 +14,26 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
-const FlashSale = async () => {
+const PopularProducts = async () => {
   const res = await fetch(
     "https://grocery-store-server-one.vercel.app/api/v1/fishes"
   );
   const { data: fishes } = await res.json();
-  // console.log(fishes);
-
   return (
     <div className="my-16">
       <Container>
         <div className="flex justify-between items-center">
-          <h1 className="text-[36px] font-semibold text-[#010937]">
-            Flash Sale
-          </h1>
+          <div>
+            <h1 className="text-[36px] font-semibold text-[#010937]">
+              Most Popular Products
+            </h1>
+            <p className="text-[16px] text-[#757F95] max-w-[60ch]">
+              Fish ideal for diverse culinary creations. Known for its
+              omnivorous feeding behavior and adaptability to various aquatic
+              environments
+            </p>
+          </div>
+
           <Button
             sx={{
               borderRadius: "40px",
@@ -44,7 +50,7 @@ const FlashSale = async () => {
         <div className="mt-8">
           <Grid container spacing={2}>
             {fishes &&
-              fishes?.slice(0, 4).map((fish: TFish) => (
+              fishes?.slice(0, 8).map((fish: TFish) => (
                 <Grid item key={fish._id} md={6} lg={3}>
                   <Card
                     elevation={0}
@@ -116,4 +122,4 @@ const FlashSale = async () => {
   );
 };
 
-export default FlashSale;
+export default PopularProducts;

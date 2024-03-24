@@ -1,5 +1,6 @@
 import BannerCarousel from "@/components/HomePage/BannerCarousel/BannerCarousel";
 import FlashSale from "@/components/HomePage/FlashSale/FlashSale";
+import PopularProducts from "@/components/HomePage/PopularProducts/PopularProducts";
 import TopCategory from "@/components/HomePage/TopCategory/TopCategory";
 
 const HomePage = () => {
@@ -8,6 +9,7 @@ const HomePage = () => {
       <BannerCarousel />
       <FlashSale />
       <TopCategory />
+      <PopularProducts />
     </div>
   );
 };
