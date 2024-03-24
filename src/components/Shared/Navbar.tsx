@@ -12,7 +12,7 @@ const Navbar = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
 
   return (
-    <div className="bg-[#ddd] px-4 md:px-0">
+    <div className="bg-gradient-to-r from-[#0094cf1a] to-[#0094cf18] px-4 md:px-0">
       <Container
         sx={{
           padding: "12px 0px",

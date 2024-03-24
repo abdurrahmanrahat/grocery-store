@@ -12,3 +12,5 @@
  * product image: 310 * 370
  *
  */
+
+// navbar color bg-[#ddd]
