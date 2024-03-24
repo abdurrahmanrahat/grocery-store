@@ -1,14 +1,7 @@
 import { TFish } from "@/types";
 // import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
-import {
-  Box,
-  Card,
-  CardActions,
-  CardContent,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 
 const SingleCard = ({ fish }: { fish: TFish }) => {
@@ -40,8 +33,17 @@ const SingleCard = ({ fish }: { fish: TFish }) => {
           <Typography variant="h6" fontSize="20px" fontWeight={500}>
             {fish.title}
           </Typography>
+          <div className="flex justify-between pt-2 pb-5">
+            <div className="flex gap-2 text-[#757F95] text-[14px]">
+              <del className="font-semibold text-[14px]">${fish.price}</del>
+              <Typography color="primary.dark" fontWeight={600} fontSize="14px">
+                ${Number(fish.price) - 20}
+              </Typography>
+            </div>
+            <ArrowForwardOutlinedIcon />
+          </div>
         </CardContent>
-        <CardActions
+        {/* <CardActions
           sx={{
             justifyContent: "space-between",
             px: 2,
@@ -55,7 +57,7 @@ const SingleCard = ({ fish }: { fish: TFish }) => {
             </Typography>
           </div>
           <ArrowForwardOutlinedIcon />
-        </CardActions>
+        </CardActions> */}
       </Card>
     </Grid>
   );
