@@ -19,7 +19,7 @@ const FlashSale = async () => {
     "https://grocery-store-server-one.vercel.app/api/v1/fishes"
   );
   const { data: fishes } = await res.json();
-  console.log(fishes);
+  // console.log(fishes);
 
   return (
     <div className="my-16">
@@ -47,6 +47,7 @@ const FlashSale = async () => {
               fishes?.slice(0, 4).map((fish: TFish) => (
                 <Grid item key={fish._id} md={6} lg={3}>
                   <Card
+                    elevation={0}
                     sx={
                       {
                         // border: "none",
@@ -80,7 +81,7 @@ const FlashSale = async () => {
                       </Box>
                     </Box>
                     <CardContent>
-                      <Typography variant="h6" component="div" fontWeight={600}>
+                      <Typography variant="h6" fontWeight={600}>
                         {fish.title}
                       </Typography>
                     </CardContent>
@@ -91,21 +92,18 @@ const FlashSale = async () => {
                         paddingBottom: "20px",
                       }}
                     >
-                      <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        sx={{
-                          display: "flex",
-                          gap: "8px",
-                        }}
-                      >
-                        <Box fontWeight={600}>
-                          <del>${fish.price}</del>
-                        </Box>
-                        <Box color="primary.dark" fontWeight={600}>
+                      <div className="flex gap-2 text-[#757F95] text-[14px]">
+                        <del className="font-semibold text-[14px]">
+                          ${fish.price}
+                        </del>
+                        <Typography
+                          color="primary.dark"
+                          fontWeight={600}
+                          fontSize="14px"
+                        >
                           ${Number(fish.price) - 20}
-                        </Box>
-                      </Typography>
+                        </Typography>
+                      </div>
                       <AddCircleOutlineIcon />
                     </CardActions>
                   </Card>
