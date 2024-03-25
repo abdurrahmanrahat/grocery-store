@@ -15,7 +15,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
       <MobileMenu />
 
       <div className="col-span-10 h-full">
-        <div className="flex gap-2 justify-end items-center bg-gradient-to-r from-[#0094cf1a] to-[#0094cf18] px-5 py-2">
+        <div className="hidden lg:flex gap-2 justify-end items-center bg-gradient-to-r from-[#0094cf1a] to-[#0094cf18] px-5 py-2">
           <div className="text-end">
             <h4 className="font-semibold">Abdur Rahman</h4>
             <p className="text-[14px]">Admin</p>

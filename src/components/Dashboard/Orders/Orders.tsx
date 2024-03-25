@@ -72,7 +72,12 @@ const Orders = () => {
         Recent Orders
       </h2>
 
-      <Table size="small">
+      <Table
+        size="small"
+        sx={{
+          overflow: "auto",
+        }}
+      >
         <TableHead>
           <TableRow>
             <TableCell>Date</TableCell>

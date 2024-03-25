@@ -51,22 +51,22 @@ const MobileMenu = () => {
           </div>
 
           <div className="mt-4 space-y-2">
-            <p className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+            <div className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink exact href="/dashboard">
                 <div className="flex items-center gap-2">
                   <GridViewOutlinedIcon />
                   <span className="truncate">Dashboard</span>
                 </div>
               </ActiveLink>
-            </p>
-            <p className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+            </div>
+            <div className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink href="/dashboard/allproducts">
                 <div className="flex items-center gap-2">
                   <LocalMallOutlinedIcon />
                   <span className="truncate">All Products</span>
                 </div>
               </ActiveLink>
-            </p>
+            </div>
           </div>
         </motion.nav>
       )}
