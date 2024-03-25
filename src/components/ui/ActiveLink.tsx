@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
@@ -16,9 +18,6 @@ const ActiveLink = ({ href, exact = false, children }: TActiveLinkProps) => {
     <div>
       <Link
         href={href}
-        // className={({ isActive }) =>
-        //   isActive ? "border-b-2 border-[#EE9322]" : ""
-        // }
         className={active ? "text-[#0095CF] font-semibold" : ""}
       >
         {children}
