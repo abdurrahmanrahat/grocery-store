@@ -41,7 +41,7 @@ const Navbar = () => {
               <ActiveLink href="/fish">Fish</ActiveLink>
             </li>
             <li className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500">
-              <ActiveLink href="/fish">About</ActiveLink>
+              <ActiveLink href="/dashboard">Dashboard</ActiveLink>
             </li>
             <li className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500">
               <ActiveLink href="/fish">Contact</ActiveLink>

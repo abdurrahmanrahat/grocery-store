@@ -43,21 +43,6 @@ const SingleCard = ({ fish }: { fish: TFish }) => {
             <ArrowForwardOutlinedIcon />
           </div>
         </CardContent>
-        {/* <CardActions
-          sx={{
-            justifyContent: "space-between",
-            px: 2,
-            paddingBottom: "20px",
-          }}
-        >
-          <div className="flex gap-2 text-[#757F95] text-[14px]">
-            <del className="font-semibold text-[14px]">${fish.price}</del>
-            <Typography color="primary.dark" fontWeight={600} fontSize="14px">
-              ${Number(fish.price) - 20}
-            </Typography>
-          </div>
-          <ArrowForwardOutlinedIcon />
-        </CardActions> */}
       </Card>
     </Grid>
   );
