@@ -1,5 +1,5 @@
 import FishSaleCard from "@/components/FlashSalePage/FishSaleCard";
-import { Container, Grid } from "@mui/material";
+import { Checkbox, Container, FormControlLabel, Grid } from "@mui/material";
 
 const FishPage = async () => {
   const res = await fetch(
@@ -12,7 +12,17 @@ const FishPage = async () => {
       <Container>
         <Grid container>
           <Grid item xs={12} md={4} lg={3}>
-            <h2>Hello</h2>
+            <div>
+              <div className="border-l-4 border-[#010937] font-medium text-[20px] pl-2">
+                Price Range
+              </div>
+              <div className="flex flex-col mt-4">
+                <FormControlLabel control={<Checkbox />} label="$200 - $300" />
+                <FormControlLabel control={<Checkbox />} label="$300 - $400" />
+                <FormControlLabel control={<Checkbox />} label="$400 - $500" />
+                <FormControlLabel control={<Checkbox />} label="$500 - $600" />
+              </div>
+            </div>
           </Grid>
           <Grid item xs={12} md={8} lg={9}>
             <div className="space-y-1">
