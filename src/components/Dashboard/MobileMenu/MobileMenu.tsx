@@ -52,7 +52,7 @@ const MobileMenu = () => {
 
           <div className="mt-4 space-y-2">
             <p className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
-              <ActiveLink href="/dashboard">
+              <ActiveLink exact href="/dashboard">
                 <div className="flex items-center gap-2">
                   <GridViewOutlinedIcon />
                   <span className="truncate">Dashboard</span>
