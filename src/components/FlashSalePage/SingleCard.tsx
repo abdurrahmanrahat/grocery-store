@@ -4,9 +4,9 @@ import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
 import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 
-const SingleCard = ({ fish }: { fish: TFish }) => {
+const SingleCard = ({ fish, lgCount }: { fish: TFish; lgCount: number }) => {
   return (
-    <Grid item md={6} lg={3}>
+    <Grid item md={6} lg={lgCount}>
       <Card elevation={0}>
         <Box
           sx={{

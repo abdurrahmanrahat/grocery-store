@@ -27,7 +27,7 @@ const FlashSale = async () => {
 
         {/* card */}
         <div className="mt-8">
-          <FishSaleCard fishes={fishes} />
+          <FishSaleCard fishes={fishes} lgCount={3} />
         </div>
       </Container>
     </div>

@@ -6,7 +6,13 @@ import { Box, Button, Grid } from "@mui/material";
 import { useState } from "react";
 import SingleCard from "./SingleCard";
 
-const FishSaleCard = ({ fishes }: { fishes: TFish[] }) => {
+const FishSaleCard = ({
+  fishes,
+  lgCount,
+}: {
+  fishes: TFish[];
+  lgCount: number;
+}) => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
@@ -15,9 +21,11 @@ const FishSaleCard = ({ fishes }: { fishes: TFish[] }) => {
         {isOpen
           ? fishes
               ?.slice(0, 12)
-              .map((fish: TFish) => <SingleCard key={fish._id} fish={fish} />)
+              .map((fish: TFish) => (
+                <SingleCard key={fish._id} fish={fish} lgCount={lgCount} />
+              ))
           : fishes?.map((fish: TFish) => (
-              <SingleCard key={fish._id} fish={fish} />
+              <SingleCard key={fish._id} fish={fish} lgCount={lgCount} />
             ))}
       </Grid>
 
