@@ -1,3 +1,5 @@
+"use client";
+
 import { useTheme } from "@mui/material/styles";
 import { LineChart, axisClasses } from "@mui/x-charts";
 import { ChartsTextStyle } from "@mui/x-charts/ChartsText";
@@ -22,12 +24,14 @@ const data = [
   createData("21:00", 2400),
   createData("24:00"),
 ];
+
 const Chart = () => {
   const theme = useTheme();
 
   return (
     <React.Fragment>
       <h2 className="text-[24px] font-semibold text-[#0095CF]">Today</h2>
+
       <div style={{ width: "100%", flexGrow: 1, overflow: "hidden" }}>
         <LineChart
           dataset={data}

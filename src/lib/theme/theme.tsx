@@ -24,5 +24,12 @@ export const theme = createTheme({
       },
     },
   },
-  typography: {},
+  typography: {
+    body1: {
+      fontSize: "14px",
+    },
+    body2: {
+      fontSize: "16px",
+    },
+  },
 });
