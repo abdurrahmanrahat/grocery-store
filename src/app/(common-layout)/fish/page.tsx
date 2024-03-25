@@ -11,7 +11,18 @@ const FishPage = async () => {
     <div className="my-16">
       <Container>
         <Grid container>
-          <Grid item xs={12} md={4} lg={3}>
+          <Grid
+            item
+            xs={12}
+            md={4}
+            lg={3}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "24px",
+            }}
+          >
+            {/* price range */}
             <div>
               <div className="border-l-4 border-[#010937] font-medium text-[20px] pl-2">
                 Price Range
@@ -21,6 +32,33 @@ const FishPage = async () => {
                 <FormControlLabel control={<Checkbox />} label="$300 - $400" />
                 <FormControlLabel control={<Checkbox />} label="$400 - $500" />
                 <FormControlLabel control={<Checkbox />} label="$500 - $600" />
+              </div>
+            </div>
+
+            {/* categories */}
+            <div>
+              <div className="border-l-4 border-[#010937] font-medium text-[20px] pl-2">
+                Category / Brand
+              </div>
+              <div className="flex flex-col mt-4">
+                <FormControlLabel control={<Checkbox />} label="Carp" />
+                <FormControlLabel control={<Checkbox />} label="Haddock" />
+                <FormControlLabel control={<Checkbox />} label="Hilsa" />
+                <FormControlLabel control={<Checkbox />} label="Mahi" />
+                <FormControlLabel control={<Checkbox />} label="Salmon" />
+              </div>
+            </div>
+            {/* price range */}
+            <div>
+              <div className="border-l-4 border-[#010937] font-medium text-[20px] pl-2">
+                Ratings
+              </div>
+              <div className="flex flex-col mt-4">
+                <FormControlLabel control={<Checkbox />} label="1 Star" />
+                <FormControlLabel control={<Checkbox />} label="2 Star" />
+                <FormControlLabel control={<Checkbox />} label="3 Star" />
+                <FormControlLabel control={<Checkbox />} label="4 Star" />
+                <FormControlLabel control={<Checkbox />} label="5 Star" />
               </div>
             </div>
           </Grid>
