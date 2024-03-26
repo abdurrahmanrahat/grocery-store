@@ -39,7 +39,7 @@ const FlashSale = async () => {
               fontWeight: "700",
             }}
             component={Link}
-            href="#"
+            href="/flashsale"
           >
             <Box>View All</Box> <ChevronRightOutlinedIcon />
           </Button>

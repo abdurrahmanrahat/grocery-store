@@ -65,7 +65,7 @@ const TopCategory = () => {
               fontWeight: "700",
             }}
             component={Link}
-            href="#"
+            href="/fish"
           >
             <Box>View All</Box> <ChevronRightOutlinedIcon />
           </Button>
