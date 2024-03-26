@@ -114,6 +114,26 @@ const SingleFishPage = async ({ params }: TFishProps) => {
             </div>
           </Grid>
         </Grid>
+
+        {/* more details div */}
+        <div className="mt-12">
+          <h2 className="text-[24px] lg:text-[28px] font-medium my-4">
+            Description
+          </h2>
+          <div className="space-y-6">
+            <p>
+              {fish.description}
+              {fish.description}
+            </p>
+            <div>
+              {fish?.features.map((item, index) => (
+                <li key={index} className="text-[15px]">
+                  {item}
+                </li>
+              ))}
+            </div>
+          </div>
+        </div>
       </Container>
     </div>
   );
