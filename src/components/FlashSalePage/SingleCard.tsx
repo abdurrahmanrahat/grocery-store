@@ -3,6 +3,7 @@ import { TFish } from "@/types";
 import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
 import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 
 const SingleCard = ({ fish, lgCount }: { fish: TFish; lgCount: number }) => {
   return (
@@ -40,7 +41,9 @@ const SingleCard = ({ fish, lgCount }: { fish: TFish; lgCount: number }) => {
                 ${Number(fish.price) - 20}
               </Typography>
             </div>
-            <ArrowForwardOutlinedIcon />
+            <Link href={`/fish/${fish._id}`}>
+              <ArrowForwardOutlinedIcon />
+            </Link>
           </div>
         </CardContent>
       </Card>
