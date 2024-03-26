@@ -16,9 +16,15 @@ import Link from "next/link";
 
 const PopularProducts = async () => {
   const res = await fetch(
-    "https://grocery-store-server-one.vercel.app/api/v1/fishes"
+    "https://grocery-store-server-one.vercel.app/api/v1/fishes",
+    {
+      next: {
+        revalidate: 30,
+      },
+    }
   );
   const { data: fishes } = await res.json();
+
   return (
     <div className="my-16">
       <Container>
