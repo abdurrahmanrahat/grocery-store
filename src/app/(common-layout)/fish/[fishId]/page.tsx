@@ -8,6 +8,17 @@ import Image from "next/image";
 
 type TFishProps = { params: { fishId?: string } };
 
+// load 10 fish data on build time.
+export async function generateStaticParams() {
+  const fishes = await fetch(
+    "https://grocery-store-server-one.vercel.app/api/v1/fishes"
+  ).then((res) => res.json());
+
+  return fishes.slice(0, 10).map((fish: TFish) => ({
+    fishId: fish._id,
+  }));
+}
+
 const SingleFishPage = async ({ params }: TFishProps) => {
   //   console.log(params);
   const res = await fetch(

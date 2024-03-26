@@ -28,7 +28,11 @@ const FishPage = async () => {
                 Price Range
               </div>
               <div className="flex flex-col mt-4">
-                <FormControlLabel control={<Checkbox />} label="$200 - $300" />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  // onClick={() => console.log("h")}
+                  label="$200 - $300"
+                />
                 <FormControlLabel control={<Checkbox />} label="$300 - $400" />
                 <FormControlLabel control={<Checkbox />} label="$400 - $500" />
                 <FormControlLabel control={<Checkbox />} label="$500 - $600" />
