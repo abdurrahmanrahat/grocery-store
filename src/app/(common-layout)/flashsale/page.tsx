@@ -3,7 +3,7 @@ import { Container } from "@mui/material";
 
 const FlashSale = async () => {
   const res = await fetch(
-    "https://grocery-store-server-one.vercel.app/api/v1/fishes"
+    "https://grocery-store-server-one.vercel.app/api/v1/fishes?discount=true"
   );
   const { data: fishes } = await res.json();
 
