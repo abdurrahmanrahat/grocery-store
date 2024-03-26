@@ -16,7 +16,12 @@ import Link from "next/link";
 
 const FlashSale = async () => {
   const res = await fetch(
-    "https://grocery-store-server-one.vercel.app/api/v1/fishes"
+    "https://grocery-store-server-one.vercel.app/api/v1/fishes",
+    {
+      next: {
+        revalidate: 30,
+      },
+    }
   );
   const { data: fishes } = await res.json();
   // console.log(fishes);
