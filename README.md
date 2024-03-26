@@ -1,4 +1,4 @@
-# Grocery-Store ||
+# Grocery-Store || [Live View](https://grocery-store-fronted.vercel.app/)
 
 The Grocery Store project aims to elevate user engagement and functionality within the grocery niche by incorporating key features and UI/UX enhancements. By leveraging cutting-edge technologies and design principles, the platform will deliver a seamless and immersive shopping experience, facilitating informed purchasing decisions and fostering long-term customer satisfaction among grocery shopping enthusiasts.
 

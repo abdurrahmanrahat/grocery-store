@@ -1,4 +1,11 @@
 /**
+ * ------TODO: TASK----
+ * Filtering in Fish page
+ * Add parallax section in homepage
+ *
+ */
+
+/**
  * ------COLOR CODE----
  * light white- #ECE8E7
  * blue type- #0095CF
@@ -12,5 +19,3 @@
  * product image: 310 * 370
  *
  */
-
-// navbar color bg-[#ddd]
