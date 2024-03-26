@@ -44,7 +44,7 @@ const Navbar = () => {
               <ActiveLink href="/dashboard">Dashboard</ActiveLink>
             </li>
             <li className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500">
-              <ActiveLink href="/fish">Contact</ActiveLink>
+              <ActiveLink href="/contact">Contact</ActiveLink>
             </li>
           </ul>
 
@@ -87,7 +87,13 @@ const Navbar = () => {
                           </ActiveLink>
                         </li>
                         <li className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500">
+                          <ActiveLink href="/flashsale">Flash Sale</ActiveLink>
+                        </li>
+                        <li className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500">
                           <ActiveLink href="/fish">Fish</ActiveLink>
+                        </li>
+                        <li className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500">
+                          <ActiveLink href="/dashboard">Dashboard</ActiveLink>
                         </li>
                       </ul>
                     </nav>
