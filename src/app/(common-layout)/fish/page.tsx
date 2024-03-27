@@ -1,3 +1,4 @@
+import PriceRange from "@/components/FishPage/PriceRange";
 import FishSaleCard from "@/components/FlashSalePage/FishSaleCard";
 import { Checkbox, Container, FormControlLabel, Grid } from "@mui/material";
 
@@ -6,6 +7,9 @@ const FishPage = async () => {
     "https://grocery-store-server-one.vercel.app/api/v1/fishes"
   );
   const { data: fishes } = await res.json();
+
+  // const param = useParams();
+  // console.log();
 
   return (
     <div className="my-16">
@@ -27,16 +31,8 @@ const FishPage = async () => {
               <div className="border-l-4 border-[#010937] font-medium text-[20px] pl-2">
                 Price Range
               </div>
-              <div className="flex flex-col mt-4">
-                <FormControlLabel
-                  control={<Checkbox />}
-                  // onClick={() => console.log("h")}
-                  label="$200 - $300"
-                />
-                <FormControlLabel control={<Checkbox />} label="$300 - $400" />
-                <FormControlLabel control={<Checkbox />} label="$400 - $500" />
-                <FormControlLabel control={<Checkbox />} label="$500 - $600" />
-              </div>
+
+              <PriceRange />
             </div>
 
             {/* categories */}

@@ -23,15 +23,23 @@ const TopCategory = () => {
 
         {/* card */}
         <div className="md:flex justify-between gap-6 mt-12">
-          <div className="relative mb-4 md:mb-0">
+          <Box
+            component={Link}
+            href="/fish?category=carp"
+            className="relative mb-4 md:mb-0"
+          >
             <Image src={CarpImg} className="rounded-md" alt="carp image" />
             <h2 className="absolute bottom-6 left-6 text-[28px] font-semibold text-white">
               Carp Fishes
             </h2>
-          </div>
+          </Box>
 
           <div className="flex flex-col justify-between gap-4">
-            <div className="relative">
+            <Box
+              component={Link}
+              href="/fish?category=salmon"
+              className="relative"
+            >
               <Image
                 src={salmonImg}
                 className="rounded-md"
@@ -40,21 +48,30 @@ const TopCategory = () => {
               <h2 className="absolute bottom-6 left-6 text-[28px] font-semibold text-white">
                 Salmon Fishes
               </h2>
-            </div>
-            <div className="relative">
+            </Box>
+
+            <Box
+              component={Link}
+              href="/fish?category=mahi"
+              className="relative"
+            >
               <Image src={MahiImg} className="rounded-md" alt="mahi image" />
               <h2 className="absolute bottom-6 left-6 text-[28px] font-semibold text-white">
                 Mahi Fishes
               </h2>
-            </div>
+            </Box>
           </div>
 
-          <div className="relative mt-4 md:mt-0">
+          <Box
+            component={Link}
+            href="/fish?category=hilsa"
+            className="relative mt-4 md:mt-0"
+          >
             <Image src={HilsaImg} className="rounded-md" alt="hilsa image" />
             <h2 className="absolute bottom-6 left-6 text-[28px] font-semibold text-white">
               Hilsa Fishes
             </h2>
-          </div>
+          </Box>
         </div>
 
         {/* button */}
