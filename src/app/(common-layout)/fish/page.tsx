@@ -9,7 +9,7 @@ const FishPage = async () => {
   const { data: fishes } = await res.json();
 
   // const param = useParams();
-  // console.log();
+  // console.log(searchParams);
 
   return (
     <div className="my-16">
