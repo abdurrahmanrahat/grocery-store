@@ -1,3 +1,6 @@
+import { SvgIconTypeMap } from "@mui/material";
+import { OverridableComponent } from "@mui/material/OverridableComponent";
+
 export type TFish = {
   _id: string;
   image: string[];
@@ -9,4 +12,10 @@ export type TFish = {
   discountPercentage: string;
   description: string;
   features: string[];
+};
+
+export type TDrawerItem = {
+  title: string;
+  path: string;
+  icon?: OverridableComponent<SvgIconTypeMap<{}, "svg">> & { muiName: string };
 };
