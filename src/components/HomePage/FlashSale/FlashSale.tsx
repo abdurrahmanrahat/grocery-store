@@ -30,9 +30,12 @@ const FlashSale = async () => {
     <div className="my-16">
       <Container>
         <div className="flex justify-between items-center">
-          <h1 className="text-[36px] font-semibold text-[#010937]">
-            Flash Sale
-          </h1>
+          <div>
+            <h1 className="text-[36px] font-semibold text-[#010937]">
+              Flash Sale
+            </h1>
+            <div className="h-[2px] w-[180px] rounded-full bg-gradient-to-r from-transparent via-[#0095CF] to-transparent"></div>
+          </div>
           <Button
             sx={{
               borderRadius: "40px",

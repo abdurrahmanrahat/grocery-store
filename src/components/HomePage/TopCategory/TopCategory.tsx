@@ -12,10 +12,13 @@ const TopCategory = () => {
     <div className="my-16 md:my-24">
       <Container>
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-[36px] font-semibold text-[#010937]">
-            Top Categories
-          </h1>
-          <p className="text-[#757F95] max-w-[60ch] text-center">
+          <div>
+            <h1 className="text-[36px] font-semibold text-[#010937]">
+              Top Categories
+            </h1>
+            <div className="h-[2px] w-[280px] rounded-full bg-gradient-to-r from-transparent via-[#0095CF] to-transparent"></div>
+          </div>
+          <p className="text-[#757F95] max-w-[60ch] text-center mt-[12px]">
             Explore top categories for quality products from fresh produce to
             pantry staples, curated for excellence
           </p>

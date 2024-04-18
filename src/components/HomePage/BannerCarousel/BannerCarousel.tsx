@@ -8,7 +8,7 @@ const BannerCarousel = () => {
       <div className="">
         <Image
           src={BannerImage}
-          className="w-full h-[400px] md:h-full"
+          className="w-full h-[520px] md:h-full"
           alt="banner image"
         />
       </div>
