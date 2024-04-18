@@ -33,5 +33,3 @@ export const theme = createTheme({
     },
   },
 });
-
-theme.shadows[1] = "0px 5px 22px lightgray";

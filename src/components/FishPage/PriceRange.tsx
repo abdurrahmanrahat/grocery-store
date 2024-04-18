@@ -19,19 +19,11 @@ const PriceRange = () => {
   //     });
   //   };
 
-  // console.log(searchParams);
-
-  // const handleFilterPrice = (priceAmount) => {
-  //   const queryParams = new URLSearchParams();
-  //   queryParams.set("price", priceAmount);
-  //   console.log(queryParams);
-  // };
-
   return (
     <div className="flex flex-col mt-4">
       <FormControlLabel
         control={<Checkbox />}
-        onClick={() => handleFilterPrice("200")}
+        // onClick={() => handleFilterPrice("200", "300")}
         label="$200 - $300"
       />
       <FormControlLabel control={<Checkbox />} label="$300 - $400" />

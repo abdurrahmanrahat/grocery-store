@@ -1,9 +1,12 @@
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import Link from "@mui/material/Link";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
 import React from "react";
 
 // Generate Order Data
@@ -61,10 +64,6 @@ const rows = [
   ),
 ];
 
-// function preventDefault(event: React.MouseEvent) {
-//   event.preventDefault();
-// }
-
 const Orders = () => {
   return (
     <React.Fragment>
@@ -72,8 +71,8 @@ const Orders = () => {
         Recent Orders
       </h2>
 
-      <div className="overflow-hidden overflow-x-auto">
-        <Table size="small">
+      <div className="">
+        {/* <Table size="small">
           <TableHead>
             <TableRow>
               <TableCell>Date</TableCell>
@@ -84,6 +83,29 @@ const Orders = () => {
             </TableRow>
           </TableHead>
 
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow key={row.id}>
+                <TableCell>{row.date}</TableCell>
+                <TableCell>{row.name}</TableCell>
+                <TableCell>{row.shipTo}</TableCell>
+                <TableCell>{row.paymentMethod}</TableCell>
+                <TableCell align="right">{`$${row.amount}`}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table> */}
+
+        <Table className="mt-8 md:mt-0">
+          <TableHeader>
+            <TableRow className="text-md text-[#333333] md:text-xl font-semibold">
+              <TableHead>Date</TableHead>
+              <TableHead>Name</TableHead>
+              <TableHead>Ship To</TableHead>
+              <TableHead>Payment Method</TableHead>
+              <TableHead>Sale Amount</TableHead>
+            </TableRow>
+          </TableHeader>
           <TableBody>
             {rows.map((row) => (
               <TableRow key={row.id}>

@@ -1,5 +1,5 @@
-import Chart from "@/components/Dashboard/Chart/Chart";
-import Deposits from "@/components/Dashboard/Deposits/Deposits";
+// import Chart from "@/components/Dashboard/Chart/Chart";
+// import Deposits from "@/components/Dashboard/Deposits/Deposits";
 import Orders from "@/components/Dashboard/Orders/Orders";
 import { Container, Grid, Paper } from "@mui/material";
 
@@ -15,9 +15,11 @@ const DashboardHomePage = () => {
               display: "flex",
               flexDirection: "column",
               height: 240,
+              overflow: "hidden",
             }}
           >
-            <Chart />
+            {/* <Chart /> */}
+            <h2>chart</h2>
           </Paper>
         </Grid>
 
@@ -31,7 +33,8 @@ const DashboardHomePage = () => {
               height: 240,
             }}
           >
-            <Deposits />
+            {/* <Deposits /> */}
+            <h2>Deposit</h2>
           </Paper>
         </Grid>
 
@@ -39,6 +42,7 @@ const DashboardHomePage = () => {
         <Grid item xs={12}>
           <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
             <Orders />
+            {/* <h2>orders</h2> */}
           </Paper>
         </Grid>
       </Grid>
