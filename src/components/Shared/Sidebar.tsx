@@ -5,14 +5,18 @@ import SidebarItem from "./SidebarItem";
 
 const Sidebar = () => {
   return (
-    <Box>
+    <Box
+      sx={{
+        position: "fixed",
+      }}
+    >
       <Stack
         direction="row"
         justifyContent="center"
         alignItems="center"
         gap={1}
         sx={{
-          py: 1,
+          py: 2,
           mt: 2,
         }}
         component={Link}
