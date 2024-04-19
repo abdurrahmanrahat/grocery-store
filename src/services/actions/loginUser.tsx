@@ -2,7 +2,7 @@
 
 import { TLoginUser } from "@/types";
 
-export const registerUser = async (userData: TLoginUser) => {
+export const loginUser = async (userData: TLoginUser) => {
   const res = await fetch(`${process.env.BACKED_URL}/login`, {
     method: "POST",
     headers: {

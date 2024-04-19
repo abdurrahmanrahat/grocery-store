@@ -2,13 +2,23 @@
 
 import GSForm from "@/components/Forms/GSForm";
 import GSInput from "@/components/Forms/GSInput";
+import { loginUser } from "@/services/actions/loginUser";
 import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
 import Link from "next/link";
-import { FieldValues } from "react-hook-form";
+import toast from "react-hot-toast";
 
 const LoginPage = () => {
-  const handleLogin = async (values: FieldValues) => {
+  const handleLogin = async (values: any) => {
     console.log(values);
+    try {
+      const res = await loginUser(values);
+      console.log(res);
+      if (res.success) {
+        toast.success(res.message);
+      }
+    } catch (error: any) {
+      console.log(error.message);
+    }
   };
 
   return (
