@@ -3,18 +3,24 @@
 import GSForm from "@/components/Forms/GSForm";
 import GSInput from "@/components/Forms/GSInput";
 import { loginUser } from "@/services/actions/loginUser";
+import { storeUserInfo } from "@/services/auth.services";
 import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
 const LoginPage = () => {
+  const router = useRouter();
+
   const handleLogin = async (values: any) => {
     console.log(values);
     try {
       const res = await loginUser(values);
-      console.log(res);
+      // console.log(res);
       if (res.success) {
         toast.success(res.message);
+        storeUserInfo({ accessToken: res.token });
+        router.push("/");
       }
     } catch (error: any) {
       console.log(error.message);
@@ -36,7 +42,7 @@ const LoginPage = () => {
             width: "100%",
             boxShadow: 1,
             borderRadius: 1,
-            padding: 4,
+            padding: 6,
             textAlign: "center",
             border: 0,
           }}
