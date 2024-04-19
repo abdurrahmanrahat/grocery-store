@@ -1,24 +1,19 @@
 "use client";
 
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Stack,
-  TextField,
-  Typography,
-} from "@mui/material";
+import GSForm from "@/components/Forms/GSForm";
+import GSInput from "@/components/Forms/GSInput";
+import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
 import Link from "next/link";
-import { FieldValues, useForm } from "react-hook-form";
+import { FieldValues } from "react-hook-form";
+
+// default values for showing error message
+export const defaultValues = {
+  name: "",
+  email: "",
+  password: "",
+};
 
 const RegisterPage = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
   const handleRegister = async (values: FieldValues) => {
     console.log(values);
   };
@@ -68,37 +63,16 @@ const RegisterPage = () => {
 
           {/* form field */}
           <Box>
-            <form onSubmit={handleSubmit(handleRegister)}>
+            <GSForm onSubmit={handleRegister} defaultValues={defaultValues}>
               <Grid container spacing={2} my={1}>
                 <Grid item md={12}>
-                  <TextField
-                    label="Name"
-                    type="text"
-                    variant="outlined"
-                    size="small"
-                    fullWidth={true}
-                    {...register("name")}
-                  />
+                  <GSInput name="name" label="Name" type="text" />
                 </Grid>
                 <Grid item md={6}>
-                  <TextField
-                    label="Email"
-                    type="email"
-                    variant="outlined"
-                    size="small"
-                    fullWidth={true}
-                    {...register("email")}
-                  />
+                  <GSInput name="email" label="Email" type="email" />
                 </Grid>
                 <Grid item md={6}>
-                  <TextField
-                    label="Password"
-                    type="password"
-                    variant="outlined"
-                    size="small"
-                    fullWidth={true}
-                    {...register("password")}
-                  />
+                  <GSInput name="password" label="Password" type="password" />
                 </Grid>
               </Grid>
 
@@ -122,7 +96,7 @@ const RegisterPage = () => {
                   </Link>
                 </span>
               </Typography>
-            </form>
+            </GSForm>
           </Box>
         </Box>
       </Stack>
