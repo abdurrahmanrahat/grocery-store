@@ -1,24 +1,12 @@
 "use client";
 
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Stack,
-  TextField,
-  Typography,
-} from "@mui/material";
+import GSForm from "@/components/Forms/GSForm";
+import GSInput from "@/components/Forms/GSInput";
+import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
 import Link from "next/link";
-import { FieldValues, useForm } from "react-hook-form";
+import { FieldValues } from "react-hook-form";
 
-const RegisterPage = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
+const LoginPage = () => {
   const handleLogin = async (values: FieldValues) => {
     console.log(values);
   };
@@ -68,27 +56,29 @@ const RegisterPage = () => {
 
           {/* form field */}
           <Box>
-            <form onSubmit={handleSubmit(handleLogin)}>
+            <GSForm onSubmit={handleLogin}>
               <Grid container spacing={2} my={1}>
                 <Grid item md={12}>
-                  <TextField
+                  {/* <TextField
                     label="Email"
                     type="email"
                     variant="outlined"
                     size="small"
                     fullWidth={true}
                     {...register("email")}
-                  />
+                  /> */}
+                  <GSInput />
                 </Grid>
                 <Grid item md={12}>
-                  <TextField
+                  {/* <TextField
                     label="Password"
                     type="password"
                     variant="outlined"
                     size="small"
                     fullWidth={true}
                     {...register("password")}
-                  />
+                  /> */}
+                  <GSInput />
                 </Grid>
               </Grid>
 
@@ -112,7 +102,7 @@ const RegisterPage = () => {
                   </Link>
                 </span>
               </Typography>
-            </form>
+            </GSForm>
           </Box>
         </Box>
       </Stack>
@@ -120,4 +110,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default LoginPage;
