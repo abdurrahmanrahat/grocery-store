@@ -2,9 +2,12 @@
 
 import GSForm from "@/components/Forms/GSForm";
 import GSInput from "@/components/Forms/GSInput";
+import { loginUser } from "@/services/actions/loginUser";
 import { registerUser } from "@/services/actions/registerUser";
+import { storeUserInfo } from "@/services/auth.services";
 import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
 // default values for showing error message
@@ -15,13 +18,25 @@ export const defaultValues = {
 };
 
 const RegisterPage = () => {
+  const router = useRouter();
+
   const handleRegister = async (values: any) => {
-    console.log(values);
+    // console.log(values);
     try {
       const res = await registerUser(values);
-      console.log(res);
+      // console.log(res);
       if (res.success) {
         toast.success(res.message);
+
+        // auto login after user register
+        const userRes = await loginUser({
+          email: values.email,
+          password: values.password,
+        });
+        if (userRes.success) {
+          storeUserInfo({ accessToken: userRes.token });
+          router.push("/");
+        }
       }
     } catch (error: any) {
       console.log(error.message);

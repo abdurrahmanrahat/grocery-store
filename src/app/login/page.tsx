@@ -13,7 +13,7 @@ const LoginPage = () => {
   const router = useRouter();
 
   const handleLogin = async (values: any) => {
-    console.log(values);
+    // console.log(values);
     try {
       const res = await loginUser(values);
       // console.log(res);
