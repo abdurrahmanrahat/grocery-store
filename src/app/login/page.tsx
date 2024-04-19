@@ -59,26 +59,10 @@ const LoginPage = () => {
             <GSForm onSubmit={handleLogin}>
               <Grid container spacing={2} my={1}>
                 <Grid item md={12}>
-                  {/* <TextField
-                    label="Email"
-                    type="email"
-                    variant="outlined"
-                    size="small"
-                    fullWidth={true}
-                    {...register("email")}
-                  /> */}
-                  <GSInput />
+                  <GSInput name="email" label="Email" type="email" />
                 </Grid>
                 <Grid item md={12}>
-                  {/* <TextField
-                    label="Password"
-                    type="password"
-                    variant="outlined"
-                    size="small"
-                    fullWidth={true}
-                    {...register("password")}
-                  /> */}
-                  <GSInput />
+                  <GSInput name="password" label="Password" type="password" />
                 </Grid>
               </Grid>
 
