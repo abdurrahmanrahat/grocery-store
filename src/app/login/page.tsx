@@ -56,7 +56,13 @@ const LoginPage = () => {
 
           {/* form field */}
           <Box>
-            <GSForm onSubmit={handleLogin}>
+            <GSForm
+              onSubmit={handleLogin}
+              defaultValues={{
+                email: "",
+                password: "",
+              }}
+            >
               <Grid container spacing={2} my={1}>
                 <Grid item md={12}>
                   <GSInput name="email" label="Email" type="email" />
