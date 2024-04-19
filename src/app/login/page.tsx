@@ -19,7 +19,7 @@ const RegisterPage = () => {
     formState: { errors },
   } = useForm();
 
-  const handleRegister = async (values: FieldValues) => {
+  const handleLogin = async (values: FieldValues) => {
     console.log(values);
   };
 
@@ -61,26 +61,16 @@ const RegisterPage = () => {
             </Box>
             <Box>
               <Typography variant="h6" fontWeight={600}>
-                User Registration
+                Login User
               </Typography>
             </Box>
           </Stack>
 
           {/* form field */}
           <Box>
-            <form onSubmit={handleSubmit(handleRegister)}>
+            <form onSubmit={handleSubmit(handleLogin)}>
               <Grid container spacing={2} my={1}>
                 <Grid item md={12}>
-                  <TextField
-                    label="Name"
-                    type="text"
-                    variant="outlined"
-                    size="small"
-                    fullWidth={true}
-                    {...register("name")}
-                  />
-                </Grid>
-                <Grid item md={6}>
                   <TextField
                     label="Email"
                     type="email"
@@ -90,7 +80,7 @@ const RegisterPage = () => {
                     {...register("email")}
                   />
                 </Grid>
-                <Grid item md={6}>
+                <Grid item md={12}>
                   <TextField
                     label="Password"
                     type="password"
@@ -111,14 +101,14 @@ const RegisterPage = () => {
                 fullWidth={true}
                 type="submit"
               >
-                Register
+                Login
               </Button>
 
               <Typography component="p" fontWeight={300}>
-                Do You Already Have an Account?{" "}
+                Don&apos;t Have an Account?{" "}
                 <span className="text-[#0095CF] font-medium">
-                  <Link href="/login" color="primary.main">
-                    Login
+                  <Link href="/register" color="primary.main">
+                    Register
                   </Link>
                 </span>
               </Typography>
