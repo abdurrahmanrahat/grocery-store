@@ -4,12 +4,17 @@ import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { Container } from "@mui/material";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useState } from "react";
 import ActiveLink from "../ui/ActiveLink";
 
 const Navbar = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+
+  const AuthButton = dynamic(() => import("@/components/Others/AuthButton"), {
+    ssr: false,
+  });
 
   return (
     <div className="bg-gradient-to-r from-[#0094cf1a] to-[#0094cf18] px-4 md:px-0">
@@ -95,6 +100,7 @@ const Navbar = () => {
                         <li className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500">
                           <ActiveLink href="/dashboard">Dashboard</ActiveLink>
                         </li>
+                        <AuthButton></AuthButton>
                       </ul>
                     </nav>
                   </div>
@@ -103,6 +109,11 @@ const Navbar = () => {
             )}
           </div>
           {/* Mobile Navlinks end */}
+
+          {/* auth */}
+          <div className="hidden lg:flex">
+            <AuthButton></AuthButton>
+          </div>
         </div>
       </Container>
     </div>
