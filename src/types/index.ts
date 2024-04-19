@@ -1,5 +1,6 @@
 import { SvgIconTypeMap } from "@mui/material";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
+export * from "./user";
 
 export type TFish = {
   _id: string;
