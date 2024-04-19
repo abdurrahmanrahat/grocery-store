@@ -56,18 +56,16 @@ const PopularProducts = async () => {
         </div>
 
         {/* card */}
-        <div className="mt-8">
-          <Grid container spacing={2}>
+        <div className="mt-12">
+          <Grid container spacing={3}>
             {fishes &&
               fishes?.slice(0, 8).map((fish: TFish) => (
                 <Grid item key={fish._id} md={6} lg={3}>
                   <Card
                     elevation={0}
-                    sx={
-                      {
-                        // border: "none",
-                      }
-                    }
+                    sx={{
+                      boxShadow: 1,
+                    }}
                   >
                     <Box
                       sx={{

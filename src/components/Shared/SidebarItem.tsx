@@ -18,9 +18,11 @@ const SidebarItem = ({ item }: TItemProps) => {
       <ListItem
         disablePadding
         sx={{
+          ":hover": {
+            background: "transparent",
+          },
           ...(pathname === item.path
             ? {
-                // borderRight: "3px solid #1586FD",
                 color: "#1586FD",
                 "& svg": { color: "#1586FD" },
               }

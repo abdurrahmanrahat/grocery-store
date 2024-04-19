@@ -26,19 +26,7 @@ const CarouselSection = async () => {
               className="pl-1 md:basis-1/2 lg:basis-1/3"
             >
               <div className="p-1">
-                {/* <Card>
-                  <CardContent className="flex aspect-square items-center justify-center p-6">
-                    <span className="text-2xl font-semibold">{index + 1}</span>
-                  </CardContent>
-                </Card> */}
-                <Card
-                  elevation={0}
-                  sx={
-                    {
-                      // border: "none",
-                    }
-                  }
-                >
+                <Card elevation={0}>
                   <Box
                     sx={{
                       position: "relative",
