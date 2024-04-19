@@ -2,9 +2,10 @@
 
 import GSForm from "@/components/Forms/GSForm";
 import GSInput from "@/components/Forms/GSInput";
+import { registerUser } from "@/services/actions/registerUser";
 import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
 import Link from "next/link";
-import { FieldValues } from "react-hook-form";
+import toast from "react-hot-toast";
 
 // default values for showing error message
 export const defaultValues = {
@@ -14,8 +15,17 @@ export const defaultValues = {
 };
 
 const RegisterPage = () => {
-  const handleRegister = async (values: FieldValues) => {
+  const handleRegister = async (values: any) => {
     console.log(values);
+    try {
+      const res = await registerUser(values);
+      console.log(res);
+      if (res.success) {
+        toast.success(res.message);
+      }
+    } catch (error: any) {
+      console.log(error.message);
+    }
   };
 
   return (
