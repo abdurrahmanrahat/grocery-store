@@ -1,95 +1,136 @@
-import CarpImg from "@/asserts/home/category/carp.png";
-import HilsaImg from "@/asserts/home/category/hilsa.png";
-import MahiImg from "@/asserts/home/category/mahi.png";
-import salmonImg from "@/asserts/home/category/salmon.png";
-import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
-import { Box, Button, Container } from "@mui/material";
+import Image1 from "@/asserts/home/category2/1.png";
+import Image2 from "@/asserts/home/category2/2.png";
+import Image3 from "@/asserts/home/category2/3.png";
+import Image4 from "@/asserts/home/category2/4.png";
+import Image5 from "@/asserts/home/category2/5.png";
+import Image6 from "@/asserts/home/category2/6.png";
+import { TCategory } from "@/types";
+import { Box, Button, Container, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+
+const categoryData = [
+  {
+    id: "1",
+    title: "carp",
+    image: Image1,
+  },
+  {
+    id: "2",
+    title: "haddock",
+    image: Image2,
+  },
+  {
+    id: "3",
+    title: "tuna",
+    image: Image3,
+  },
+  {
+    id: "4",
+    title: "mahi",
+    image: Image4,
+  },
+  {
+    id: "1",
+    title: "trout",
+    image: Image5,
+  },
+  {
+    id: "6",
+    title: "salmon",
+    image: Image6,
+  },
+];
 
 const TopCategory = () => {
   return (
     <div className="my-16 md:my-24">
       <Container>
-        <div className="flex flex-col justify-center items-center">
-          <div>
-            <h1 className="text-[36px] font-semibold text-[#010937]">
-              Top Categories
-            </h1>
-            <div className="h-[2px] w-[280px] rounded-full bg-gradient-to-r from-transparent via-[#0095CF] to-transparent"></div>
-          </div>
-          <p className="text-[#757F95] max-w-[60ch] text-center mt-[12px]">
-            Explore top categories for quality products from fresh produce to
-            pantry staples, curated for excellence
-          </p>
-        </div>
-
-        {/* card */}
-        <div className="md:flex justify-between gap-6 mt-12">
-          <Box
-            component={Link}
-            href="/fish?category=carp"
-            className="relative mb-4 md:mb-0"
-          >
-            <Image src={CarpImg} className="rounded-md" alt="carp image" />
-            <h2 className="absolute bottom-6 left-6 text-[28px] font-semibold text-white">
-              Carp Fishes
-            </h2>
-          </Box>
-
-          <div className="flex flex-col justify-between gap-4">
-            <Box
-              component={Link}
-              href="/fish?category=salmon"
-              className="relative"
-            >
-              <Image
-                src={salmonImg}
-                className="rounded-md"
-                alt="salmon image"
-              />
-              <h2 className="absolute bottom-6 left-6 text-[28px] font-semibold text-white">
-                Salmon Fishes
-              </h2>
-            </Box>
-
-            <Box
-              component={Link}
-              href="/fish?category=mahi"
-              className="relative"
-            >
-              <Image src={MahiImg} className="rounded-md" alt="mahi image" />
-              <h2 className="absolute bottom-6 left-6 text-[28px] font-semibold text-white">
-                Mahi Fishes
-              </h2>
-            </Box>
-          </div>
-
-          <Box
-            component={Link}
-            href="/fish?category=hilsa"
-            className="relative mt-4 md:mt-0"
-          >
-            <Image src={HilsaImg} className="rounded-md" alt="hilsa image" />
-            <h2 className="absolute bottom-6 left-6 text-[28px] font-semibold text-white">
-              Hilsa Fishes
-            </h2>
-          </Box>
-        </div>
-
-        {/* button */}
-        <div className="text-center mt-8">
-          <Button
+        <Box
+          sx={{
+            margin: "40px 0px",
+            textAlign: "center",
+          }}
+        >
+          {/* <Box
             sx={{
-              borderRadius: "40px",
-              fontWeight: "700",
+              textAlign: "start",
             }}
-            component={Link}
-            href="/fish"
           >
-            <Box>View All</Box> <ChevronRightOutlinedIcon />
-          </Button>
-        </div>
+            <Typography variant="h4" fontWeight={600}>
+              Explore Treatments Across Specialist
+            </Typography>
+            <Typography component="p" fontWeight={300} fontSize={18}>
+              Experienced Doctors Across All Specialists
+            </Typography>
+          </Box> */}
+          <div className="flex flex-col justify-center items-center">
+            <div>
+              <h1 className="text-[36px] font-semibold text-[#010937]">
+                Top Categories
+              </h1>
+              <div className="h-[2px] w-[280px] rounded-full bg-gradient-to-r from-transparent via-[#0095CF] to-transparent"></div>
+            </div>
+            <p className="text-[#757F95] max-w-[60ch] text-center mt-[12px]">
+              Explore top categories for quality products from fresh produce to
+              pantry staples, curated for excellence
+            </p>
+          </div>
+
+          {/* display data in card */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[10px] mt-[60px]">
+            {categoryData?.slice(0, 6).map((item: TCategory) => (
+              <Box
+                component={Link}
+                href={`/fish?category=${item.title}`}
+                key={item.id}
+                sx={{
+                  flex: 1,
+                  width: "150px",
+                  backgroundColor: "rgba(245, 245, 245, 1)",
+                  border: "1px solid rgba(250, 250, 250, 1)",
+                  borderRadius: "10px",
+                  textAlign: "center",
+                  padding: "40px 10px",
+                  "& img": {
+                    width: "60px",
+                    height: "60px",
+                    margin: "0 auto",
+                  },
+                  "&:hover": {
+                    border: "1px solid #0095CF",
+                    padding: "40px 10px",
+                    borderRadius: "10px",
+                  },
+                }}
+              >
+                <Image
+                  src={item.image}
+                  width={100}
+                  height={100}
+                  alt={item.title}
+                />
+                <Box>
+                  <Typography
+                    component="p"
+                    fontWeight={600}
+                    fontSize={18}
+                    mt={2}
+                    textTransform="capitalize"
+                  >
+                    {item.title}
+                  </Typography>
+                </Box>
+              </Box>
+            ))}
+          </div>
+
+          <Box mt={5}>
+            <Button component={Link} href="/fish" variant="outlined">
+              View All
+            </Button>
+          </Box>
+        </Box>
       </Container>
     </div>
   );
