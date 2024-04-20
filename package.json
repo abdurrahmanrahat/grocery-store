@@ -17,6 +17,7 @@
     "@mui/material-nextjs": "^5.15.11",
     "@mui/x-charts": "^7.0.0",
     "@radix-ui/react-slot": "^1.0.2",
+    "@reduxjs/toolkit": "^2.2.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "embla-carousel-react": "^8.0.0",
@@ -29,6 +30,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.51.3",
     "react-hot-toast": "^2.4.1",
+    "react-redux": "^9.1.1",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7"
   },
