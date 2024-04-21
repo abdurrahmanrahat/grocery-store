@@ -20,6 +20,18 @@ const fishApi = baseApi.injectEndpoints({
       providesTags: ["fish"],
     }),
 
+    updateFishIntoDb: build.mutation({
+      query: (payload) => {
+        console.log("from payload api", payload);
+        return {
+          url: `/fish/${payload.fishId}`,
+          method: "PATCH",
+          body: payload.updatedFish,
+        };
+      },
+      invalidatesTags: ["fish"],
+    }),
+
     deleteFishIntoDb: build.mutation({
       query: (fishId) => ({
         url: `/fish/${fishId}`,
@@ -33,5 +45,6 @@ const fishApi = baseApi.injectEndpoints({
 export const {
   useCreateFishIntoDbMutation,
   useGetAllFishesFromDbQuery,
+  useUpdateFishIntoDbMutation,
   useDeleteFishIntoDbMutation,
 } = fishApi;
