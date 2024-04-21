@@ -9,7 +9,14 @@ const fishApi = baseApi.injectEndpoints({
         body: fish,
       }),
     }),
+    deleteFishIntoDb: build.mutation({
+      query: (fishId) => ({
+        url: `/fish/${fishId}`,
+        method: "DELETE",
+      }),
+    }),
   }),
 });
 
-export const { useCreateFishIntoDbMutation } = fishApi;
+export const { useCreateFishIntoDbMutation, useDeleteFishIntoDbMutation } =
+  fishApi;
