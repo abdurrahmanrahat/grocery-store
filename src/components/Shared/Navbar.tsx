@@ -1,5 +1,7 @@
 "use client";
 
+import { useGetAllCartFishesFromDbQuery } from "@/redux/api/cartFishApi";
+import { getUserInfo } from "@/services/auth.services";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -13,9 +15,17 @@ import ActiveLink from "../ui/ActiveLink";
 const Navbar = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
 
+  // get user info
+  const userInfo = getUserInfo();
+
   const AuthButton = dynamic(() => import("@/components/Others/AuthButton"), {
     ssr: false,
   });
+
+  // get cart products with email query
+  const query = { email: userInfo?.email };
+  const { data: cartFishes } = useGetAllCartFishesFromDbQuery({ ...query });
+  // console.log(cartFishes);
 
   return (
     <div className="bg-gradient-to-r from-[#0094cf1a] to-[#0094cf18] px-4 md:px-0">
@@ -54,7 +64,7 @@ const Navbar = () => {
             </li> */}
             <li className="font-medium md:text-[18px]">
               <Badge
-                badgeContent={1}
+                badgeContent={cartFishes?.data?.length || 1}
                 color="primary"
                 sx={{
                   cursor: "pointer",
