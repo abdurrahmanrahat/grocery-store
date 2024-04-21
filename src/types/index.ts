@@ -13,12 +13,7 @@ export type TFish = {
   isDiscount: boolean | string;
   discountPercentage: string;
   description: string;
-  features: {
-    one: string;
-    two: string;
-    three: string;
-    four: string;
-  };
+  features: string[];
 };
 
 export type TDrawerItem = {

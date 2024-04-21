@@ -20,12 +20,10 @@ const defaultProduct = {
   isDiscount: "",
   discountPercentage: "",
   description: "",
-  features: {
-    one: "",
-    two: "",
-    three: "",
-    four: "",
-  },
+  featureOne: "",
+  featureTwo: "",
+  featureThree: "",
+  featureFour: "",
 };
 
 const img_hosting_token = "a272d7fb3d5b5ee711a07f62d1b2c93f";
@@ -37,7 +35,7 @@ const CreateFish = () => {
   const [createFishIntoDb] = useCreateFishIntoDbMutation();
 
   const handleCreateFish = async (values: any) => {
-    console.log(values);
+    // console.log(values);
 
     // img hosting to imgbb
     const formData = new FormData();
@@ -67,9 +65,14 @@ const CreateFish = () => {
             discountPercentage:
               values.isDiscount == "YES" ? values.discountPercentage : "0",
             description: values.description,
-            features: values.features,
+            features: [
+              values.featureOne,
+              values.featureTwo,
+              values.featureThree,
+              values.featureFour,
+            ],
           };
-          console.log(newFish);
+          // console.log(newFish);
 
           // Send new fish to database store
           try {
@@ -145,16 +148,16 @@ const CreateFish = () => {
             </Typography>
             <Grid container spacing={2}>
               <Grid item xs={12} md={6}>
-                <GSInput name="features.one" />
+                <GSInput name="featureOne" />
               </Grid>
               <Grid item xs={12} md={6}>
-                <GSInput name="features.two" />
+                <GSInput name="featureTwo" />
               </Grid>
               <Grid item xs={12} md={6}>
-                <GSInput name="features.three" />
+                <GSInput name="featureThree" />
               </Grid>
               <Grid item xs={12} md={6}>
-                <GSInput name="features.four" />
+                <GSInput name="featureFour" />
               </Grid>
             </Grid>
           </Box>

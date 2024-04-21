@@ -86,13 +86,13 @@ const SingleFishPage = async ({ params }: TFishProps) => {
             <div className="space-y-6">
               <p>{fish.description}</p>
               <div>
-                {/* {fish?.features.slice(0, 3).map((item, index) => (
+                {fish?.features.slice(0, 3).map((item, index) => (
                   <li key={index} className="text-[14px]">
                     {item}
                   </li>
-                ))} */}
-                <li className="text-[14px]">{fish.features.one}</li>
-                <li className="text-[14px]">{fish.features.two}</li>
+                ))}
+                {/* <li className="text-[14px]">{fish.features.one}</li>
+                <li className="text-[14px]">{fish.features.two}</li> */}
               </div>
               <div className="space-y-2">
                 <div className="flex gap-4">
@@ -128,15 +128,15 @@ const SingleFishPage = async ({ params }: TFishProps) => {
               {fish.description}
             </p>
             <div>
-              {/* {fish?.features.map((item, index) => (
+              {fish?.features.map((item, index) => (
                 <li key={index} className="text-[15px]">
                   {item}
                 </li>
-              ))} */}
-              <li className="text-[15px]">{fish.features.one}</li>
+              ))}
+              {/* <li className="text-[15px]">{fish.features.one}</li>
               <li className="text-[15px]">{fish.features.two}</li>
               <li className="text-[15px]">{fish.features.three}</li>
-              <li className="text-[15px]">{fish.features.four}</li>
+              <li className="text-[15px]">{fish.features.four}</li> */}
             </div>
           </div>
         </div>

@@ -25,6 +25,20 @@ const img_hosting_token = "a272d7fb3d5b5ee711a07f62d1b2c93f";
 const FishModal = ({ open, setOpen, fishId, fish }: TModalProps) => {
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
 
+  const defaultFishValue = {
+    title: fish.title,
+    image: fish.image[0],
+    price: fish.price,
+    category: fish.category,
+    isDiscount: fish.isDiscount ? "YES" : "NO",
+    discountPercentage: fish.discountPercentage,
+    description: fish.description,
+    featureOne: fish.features[0],
+    featureTwo: fish.features[1],
+    featureThree: fish.features[2],
+    featureFour: fish.features[3],
+  };
+
   const [updateFishIntoDb] = useUpdateFishIntoDbMutation();
 
   const handleUpdateFish = async (values: any) => {
@@ -86,7 +100,7 @@ const FishModal = ({ open, setOpen, fishId, fish }: TModalProps) => {
 
   return (
     <GSFullScreenModal open={open} setOpen={setOpen} title="Edit Fish">
-      <GSForm onSubmit={handleUpdateFish} defaultValues={fish}>
+      <GSForm onSubmit={handleUpdateFish} defaultValues={defaultFishValue}>
         <Grid container spacing={2} my={2}>
           <Grid item xs={12} md={6}>
             <GSInput name="title" label="Fish Title" />
@@ -133,16 +147,16 @@ const FishModal = ({ open, setOpen, fishId, fish }: TModalProps) => {
           </Typography>
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
-              <GSInput name="features.one" />
+              <GSInput name="featureOne" />
             </Grid>
             <Grid item xs={12} md={6}>
-              <GSInput name="features.two" />
+              <GSInput name="featureTwo" />
             </Grid>
             <Grid item xs={12} md={6}>
-              <GSInput name="features.three" />
+              <GSInput name="featureThree" />
             </Grid>
             <Grid item xs={12} md={6}>
-              <GSInput name="features.four" />
+              <GSInput name="featureFour" />
             </Grid>
           </Grid>
         </Box>
