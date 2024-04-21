@@ -1,4 +1,6 @@
 import { TFish } from "@/types";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import ModeOutlinedIcon from "@mui/icons-material/ModeOutlined";
 import {
   Box,
   Container,
@@ -76,6 +78,22 @@ const AllProductsPage = async () => {
               >
                 Price
               </TableCell>
+              <TableCell
+                sx={{
+                  fontSize: "16px",
+                  fontWeight: "600",
+                }}
+              >
+                Edit
+              </TableCell>
+              <TableCell
+                sx={{
+                  fontSize: "16px",
+                  fontWeight: "600",
+                }}
+              >
+                Delete
+              </TableCell>
             </TableRow>
           </TableHead>
 
@@ -109,6 +127,16 @@ const AllProductsPage = async () => {
                 <TableCell>{fish.category}</TableCell>
                 <TableCell>{fish.ratings}</TableCell>
                 <TableCell>{fish.price}</TableCell>
+                <TableCell>
+                  <button className="border border-solid border-[#0095CF] p-[2px] rounded-[4px]">
+                    <ModeOutlinedIcon color="primary" />
+                  </button>
+                </TableCell>
+                <TableCell>
+                  <button>
+                    <DeleteOutlineOutlinedIcon fontSize="large" color="error" />
+                  </button>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
