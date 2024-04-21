@@ -4,9 +4,11 @@ import GSFileUploader from "@/components/Forms/GSFileUploader";
 import GSForm from "@/components/Forms/GSForm";
 import GSInput from "@/components/Forms/GSInput";
 import GSSelectField from "@/components/Forms/GSSelectField";
+import GSTextArea from "@/components/Forms/GSTextArea";
 import { Button, Container, Grid, Stack } from "@mui/material";
 
 const categoryItems = ["Carp", "Haddock", "Hilsa", "Mahi", "Salmon"];
+const discountItems = ["YES", "NO"];
 
 const img_hosting_token = "a272d7fb3d5b5ee711a07f62d1b2c93f";
 // console.log(img_hosting_token);
@@ -68,6 +70,17 @@ const CreateFish = () => {
                 label="Select Category"
               />
             </Grid>
+            <Grid item md={6}>
+              <GSSelectField
+                items={discountItems}
+                name="isDiscount"
+                label="Available Discount"
+              />
+            </Grid>
+          </Grid>
+
+          <Grid>
+            <GSTextArea name="description" label="Title Description" />
           </Grid>
 
           {/* submit button */}
