@@ -29,6 +29,7 @@ const SingleCard = ({ fish, lgCount }: { fish: TFish; lgCount: number }) => {
       console.error(error.message);
     }
   };
+
   return (
     <Grid item md={6} lg={lgCount}>
       <Card elevation={0}>

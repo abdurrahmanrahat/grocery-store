@@ -1,5 +1,6 @@
 import ReturnSvg from "@/asserts/svg/3d-rotate.svg";
 import DeliverSvg from "@/asserts/svg/group.svg";
+import CartButton from "@/components/FishPage/CartButton";
 import { TFish } from "@/types";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import StarIcon from "@mui/icons-material/Star";
@@ -94,6 +95,10 @@ const SingleFishPage = async ({ params }: TFishProps) => {
                 {/* <li className="text-[14px]">{fish.features.one}</li>
                 <li className="text-[14px]">{fish.features.two}</li> */}
               </div>
+
+              {/* cart button */}
+              <CartButton fish={fish} />
+
               <div className="space-y-2">
                 <div className="flex gap-4">
                   <Image
