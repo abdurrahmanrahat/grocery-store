@@ -5,7 +5,7 @@ import GSForm from "@/components/Forms/GSForm";
 import GSInput from "@/components/Forms/GSInput";
 import GSSelectField from "@/components/Forms/GSSelectField";
 import GSTextArea from "@/components/Forms/GSTextArea";
-import { Button, Container, Grid, Stack } from "@mui/material";
+import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
 
 const categoryItems = ["Carp", "Haddock", "Hilsa", "Mahi", "Salmon"];
 const discountItems = ["YES", "NO"];
@@ -44,7 +44,7 @@ const CreateFish = () => {
         margin: "32px 0px",
       }}
     >
-      <div className="mb-12">
+      <div className="mb-4">
         <h2 className="text-[28px] font-semibold text-[#010937]">
           Create Fish
         </h2>
@@ -77,11 +77,40 @@ const CreateFish = () => {
                 label="Available Discount"
               />
             </Grid>
+            <Grid item md={6}>
+              <GSInput name="discountPercentage" label="Discount Percentage" />
+            </Grid>
           </Grid>
 
           <Grid>
             <GSTextArea name="description" label="Title Description" />
           </Grid>
+
+          <Box my={2}>
+            <Typography
+              sx={{
+                fontSize: "17px",
+                fontWeight: "500",
+                marginBottom: "4px",
+              }}
+            >
+              Features of Fish
+            </Typography>
+            <Grid container spacing={2}>
+              <Grid item md={6}>
+                <GSInput name="featureOne" />
+              </Grid>
+              <Grid item md={6}>
+                <GSInput name="featureTwo" />
+              </Grid>
+              <Grid item md={6}>
+                <GSInput name="featureThree" />
+              </Grid>
+              <Grid item md={6}>
+                <GSInput name="featureFour" />
+              </Grid>
+            </Grid>
+          </Box>
 
           {/* submit button */}
           <Button
