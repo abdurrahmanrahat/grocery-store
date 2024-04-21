@@ -1,3 +1,10 @@
+"use client";
+
+import LoadingPage from "@/app/loading";
+import {
+  useDeleteFishIntoDbMutation,
+  useGetAllFishesFromDbQuery,
+} from "@/redux/api/fishApi";
 import { TFish } from "@/types";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import ModeOutlinedIcon from "@mui/icons-material/ModeOutlined";
@@ -11,12 +18,35 @@ import {
   TableRow,
 } from "@mui/material";
 import Image from "next/image";
+import toast from "react-hot-toast";
 
-const AllProductsPage = async () => {
-  const res = await fetch(
-    "https://grocery-store-server-one.vercel.app/api/v1/fishes"
-  );
-  const { data: fishes } = await res.json();
+const AllProductsPage = () => {
+  // const res = await fetch(
+  //   "https://grocery-store-server-one.vercel.app/api/v1/fishes"
+  // );
+  // const { data: fishes } = await res.json();
+
+  const { data: fishes, isLoading } = useGetAllFishesFromDbQuery({});
+  // console.log(fishes);
+
+  const [deleteFishIntoDb] = useDeleteFishIntoDbMutation();
+
+  // handle fish delete
+  const handleFishDelete = async (fishId: string) => {
+    try {
+      const res = await deleteFishIntoDb(fishId).unwrap();
+      // console.log(res);
+      if (res.success) {
+        toast.success(res?.message);
+      }
+    } catch (error: any) {
+      console.error(error?.message);
+    }
+  };
+
+  if (isLoading) {
+    return <LoadingPage />;
+  }
 
   return (
     <Container
@@ -98,7 +128,7 @@ const AllProductsPage = async () => {
           </TableHead>
 
           <TableBody>
-            {fishes?.map((fish: TFish, index: number) => (
+            {fishes?.data?.map((fish: TFish, index: number) => (
               <TableRow key={fish._id}>
                 <TableCell>{index + 1}</TableCell>
                 <TableCell
@@ -133,7 +163,7 @@ const AllProductsPage = async () => {
                   </button>
                 </TableCell>
                 <TableCell>
-                  <button>
+                  <button onClick={() => handleFishDelete(fish._id)}>
                     <DeleteOutlineOutlinedIcon fontSize="large" color="error" />
                   </button>
                 </TableCell>

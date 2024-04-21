@@ -8,15 +8,30 @@ const fishApi = baseApi.injectEndpoints({
         method: "POST",
         body: fish,
       }),
+      invalidatesTags: ["fish"],
     }),
+
+    getAllFishesFromDb: build.query({
+      query: () => ({
+        url: "/fishes",
+        method: "GET",
+        // params: arg, // arg: Record<string, any>
+      }),
+      providesTags: ["fish"],
+    }),
+
     deleteFishIntoDb: build.mutation({
       query: (fishId) => ({
         url: `/fish/${fishId}`,
         method: "DELETE",
       }),
+      invalidatesTags: ["fish"],
     }),
   }),
 });
 
-export const { useCreateFishIntoDbMutation, useDeleteFishIntoDbMutation } =
-  fishApi;
+export const {
+  useCreateFishIntoDbMutation,
+  useGetAllFishesFromDbQuery,
+  useDeleteFishIntoDbMutation,
+} = fishApi;
