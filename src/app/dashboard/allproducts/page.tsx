@@ -22,9 +22,10 @@ const AllProductsPage = async () => {
         margin: "32px 0px",
       }}
     >
-      <h2 className="text-[28px] font-semibold text-[#010937] mb-6">
-        All Products
-      </h2>
+      <div className="mb-12">
+        <h2 className="text-[28px] font-semibold text-[#010937]">All Fishes</h2>
+        <div className="h-[2px] w-[160px] rounded-full bg-gradient-to-r from-transparent via-[#0095CF] to-transparent"></div>
+      </div>
 
       {/* table */}
       <div className="overflow-hidden overflow-x-auto">

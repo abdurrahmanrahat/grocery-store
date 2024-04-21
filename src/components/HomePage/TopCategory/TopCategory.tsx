@@ -1,9 +1,9 @@
-import Image1 from "@/asserts/home/category2/1.png";
-import Image2 from "@/asserts/home/category2/2.png";
-import Image3 from "@/asserts/home/category2/3.png";
-import Image4 from "@/asserts/home/category2/4.png";
-import Image5 from "@/asserts/home/category2/5.png";
-import Image6 from "@/asserts/home/category2/6.png";
+import Image1 from "@/asserts/home/category/1.png";
+import Image2 from "@/asserts/home/category/2.png";
+import Image3 from "@/asserts/home/category/3.png";
+import Image4 from "@/asserts/home/category/4.png";
+import Image5 from "@/asserts/home/category/5.png";
+import Image6 from "@/asserts/home/category/6.png";
 import { TCategory } from "@/types";
 import { Box, Button, Container, Typography } from "@mui/material";
 import Image from "next/image";
