@@ -1,13 +1,33 @@
+import { useCreateCartFishIntoDbMutation } from "@/redux/api/cartFishApi";
+import { getUserInfo } from "@/services/auth.services";
 import { TFish } from "@/types";
-// import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 const SingleCard = ({ fish, lgCount }: { fish: TFish; lgCount: number }) => {
-  const handleCartFish = () => {
-    console.log("cart");
+  const userInfo = getUserInfo();
+
+  const [createCartFishIntoDb] = useCreateCartFishIntoDbMutation();
+
+  const handleCartFish = async () => {
+    const cartFish = {
+      ...fish,
+      email: userInfo.email,
+      userName: userInfo.name,
+    };
+
+    try {
+      const res = await createCartFishIntoDb(cartFish).unwrap();
+
+      if (res.success) {
+        toast.success(res?.message);
+      }
+    } catch (error: any) {
+      console.error(error.message);
+    }
   };
   return (
     <Grid item md={6} lg={lgCount}>

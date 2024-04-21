@@ -7,6 +7,7 @@ const AuthButton = () => {
   const router = useRouter();
 
   const userInfo = getUserInfo();
+  // console.log(userInfo);
 
   // logout user
   const handleLogout = () => {
