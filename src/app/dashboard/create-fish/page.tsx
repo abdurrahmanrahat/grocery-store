@@ -3,7 +3,10 @@
 import GSFileUploader from "@/components/Forms/GSFileUploader";
 import GSForm from "@/components/Forms/GSForm";
 import GSInput from "@/components/Forms/GSInput";
+import GSSelectField from "@/components/Forms/GSSelectField";
 import { Button, Container, Grid, Stack } from "@mui/material";
+
+const categoryItems = ["Carp", "Haddock", "Hilsa", "Mahi", "Salmon"];
 
 const img_hosting_token = "a272d7fb3d5b5ee711a07f62d1b2c93f";
 // console.log(img_hosting_token);
@@ -26,7 +29,7 @@ const CreateFish = () => {
       .then(async (imgRes) => {
         if (imgRes.success) {
           const image = imgRes.data.display_url;
-          console.log(image);
+          // console.log(image);
 
           // Send new supply to database store
         }
@@ -55,12 +58,22 @@ const CreateFish = () => {
             <Grid item md={6}>
               <GSFileUploader name="image" label="Upload File" />
             </Grid>
+            <Grid item md={6}>
+              <GSInput name="price" label="Fish Price" />
+            </Grid>
+            <Grid item md={6}>
+              <GSSelectField
+                items={categoryItems}
+                name="category"
+                label="Select Category"
+              />
+            </Grid>
           </Grid>
 
           {/* submit button */}
           <Button
             sx={{
-              marginY: "16px",
+              marginY: "20px",
               fontSize: "17px",
             }}
             fullWidth={true}

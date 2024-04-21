@@ -8,9 +8,15 @@ type TFileProps = {
   name: string;
   label?: string;
   sx?: SxProps;
+  fullWidth?: boolean;
 };
 
-export default function GSFileUploader({ name, label, sx }: TFileProps) {
+export default function GSFileUploader({
+  name,
+  label,
+  sx,
+  fullWidth = true,
+}: TFileProps) {
   const { control } = useFormContext();
   return (
     <Controller
@@ -25,6 +31,7 @@ export default function GSFileUploader({ name, label, sx }: TFileProps) {
             tabIndex={-1}
             startIcon={<CloudUploadIcon />}
             sx={{ ...sx }}
+            fullWidth={fullWidth}
           >
             {label || "Upload File"}
             <Input
