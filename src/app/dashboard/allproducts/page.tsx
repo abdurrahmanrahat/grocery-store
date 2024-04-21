@@ -18,13 +18,12 @@ import {
   TableRow,
 } from "@mui/material";
 import Image from "next/image";
+import { useState } from "react";
 import toast from "react-hot-toast";
+import FishModal from "./components/FishModal";
 
 const AllProductsPage = () => {
-  // const res = await fetch(
-  //   "https://grocery-store-server-one.vercel.app/api/v1/fishes"
-  // );
-  // const { data: fishes } = await res.json();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const { data: fishes, isLoading } = useGetAllFishesFromDbQuery({});
   // console.log(fishes);
@@ -138,13 +137,20 @@ const AllProductsPage = () => {
                     alignItems: "center",
                   }}
                 >
-                  <Image
-                    src={fish.image[0]}
-                    width={80}
-                    height={80}
-                    alt={fish.title}
-                    className="rounded-md"
-                  />
+                  <Box
+                    sx={{
+                      width: "auto",
+                      height: "auto",
+                    }}
+                  >
+                    <Image
+                      src={fish.image[0]}
+                      width={80}
+                      height={80}
+                      alt={fish.title}
+                      className="rounded-md"
+                    />
+                  </Box>
                   <Box
                     sx={{
                       fontSize: "20px",
@@ -158,9 +164,13 @@ const AllProductsPage = () => {
                 <TableCell>{fish.ratings}</TableCell>
                 <TableCell>{fish.price}</TableCell>
                 <TableCell>
-                  <button className="border border-solid border-[#0095CF] p-[2px] rounded-[4px]">
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="border border-solid border-[#0095CF] p-[2px] rounded-[4px]"
+                  >
                     <ModeOutlinedIcon color="primary" />
                   </button>
+                  <FishModal open={isModalOpen} setOpen={setIsModalOpen} />
                 </TableCell>
                 <TableCell>
                   <button onClick={() => handleFishDelete(fish._id)}>
