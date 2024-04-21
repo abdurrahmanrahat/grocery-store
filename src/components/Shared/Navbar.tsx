@@ -2,7 +2,8 @@
 
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import { Container } from "@mui/material";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { Badge, Container } from "@mui/material";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -48,8 +49,19 @@ const Navbar = () => {
             <li className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500">
               <ActiveLink href="/dashboard">Dashboard</ActiveLink>
             </li>
-            <li className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500">
+            {/* <li className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500">
               <ActiveLink href="/contact">Contact</ActiveLink>
+            </li> */}
+            <li className="font-medium md:text-[18px]">
+              <Badge
+                badgeContent={1}
+                color="primary"
+                sx={{
+                  cursor: "pointer",
+                }}
+              >
+                <ShoppingCartOutlinedIcon color="action" />
+              </Badge>
             </li>
           </ul>
 
@@ -99,6 +111,17 @@ const Navbar = () => {
                         </li>
                         <li className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500">
                           <ActiveLink href="/dashboard">Dashboard</ActiveLink>
+                        </li>
+                        <li className="font-medium md:text-[18px]">
+                          <Badge
+                            badgeContent={1}
+                            color="primary"
+                            sx={{
+                              cursor: "pointer",
+                            }}
+                          >
+                            <ShoppingCartOutlinedIcon color="action" />
+                          </Badge>
                         </li>
                         <AuthButton></AuthButton>
                       </ul>
