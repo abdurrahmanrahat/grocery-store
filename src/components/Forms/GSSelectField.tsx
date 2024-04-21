@@ -10,6 +10,7 @@ type TSelectFieldProps = {
   fullWidth?: boolean;
   sx?: SxProps;
   placeholder?: string;
+  defaultValue?: string;
 };
 
 const GSSelectField = ({
@@ -20,6 +21,7 @@ const GSSelectField = ({
   required,
   fullWidth = true,
   sx,
+  defaultValue = "",
 }: TSelectFieldProps) => {
   const { control } = useFormContext();
 
@@ -38,7 +40,7 @@ const GSSelectField = ({
           fullWidth={fullWidth}
         >
           {items.map((name) => (
-            <MenuItem key={name} value={name}>
+            <MenuItem key={name} value={name} defaultValue={defaultValue}>
               {name}
             </MenuItem>
           ))}

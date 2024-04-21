@@ -170,7 +170,12 @@ const AllProductsPage = () => {
                   >
                     <ModeOutlinedIcon color="primary" />
                   </button>
-                  <FishModal open={isModalOpen} setOpen={setIsModalOpen} />
+                  <FishModal
+                    open={isModalOpen}
+                    setOpen={setIsModalOpen}
+                    fishId={fish._id}
+                    fish={fish}
+                  />
                 </TableCell>
                 <TableCell>
                   <button onClick={() => handleFishDelete(fish._id)}>

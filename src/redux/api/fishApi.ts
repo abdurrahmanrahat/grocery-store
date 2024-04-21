@@ -22,7 +22,7 @@ const fishApi = baseApi.injectEndpoints({
 
     updateFishIntoDb: build.mutation({
       query: (payload) => {
-        console.log("from payload api", payload);
+        // console.log("from payload api", payload);
         return {
           url: `/fish/${payload.fishId}`,
           method: "PATCH",

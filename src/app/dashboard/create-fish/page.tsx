@@ -20,10 +20,12 @@ const defaultProduct = {
   isDiscount: "",
   discountPercentage: "",
   description: "",
-  featureOne: "",
-  featureTwo: "",
-  featureThree: "",
-  featureFour: "",
+  features: {
+    one: "",
+    two: "",
+    three: "",
+    four: "",
+  },
 };
 
 const img_hosting_token = "a272d7fb3d5b5ee711a07f62d1b2c93f";
@@ -65,16 +67,11 @@ const CreateFish = () => {
             discountPercentage:
               values.isDiscount == "YES" ? values.discountPercentage : "0",
             description: values.description,
-            features: [
-              values.featureOne,
-              values.featureTwo,
-              values.featureThree,
-              values.featureFour,
-            ],
+            features: values.features,
           };
           console.log(newFish);
 
-          // Send new supply to database store
+          // Send new fish to database store
           try {
             const res = await createFishIntoDb(newFish).unwrap();
             console.log(res);
@@ -148,16 +145,16 @@ const CreateFish = () => {
             </Typography>
             <Grid container spacing={2}>
               <Grid item xs={12} md={6}>
-                <GSInput name="featureOne" />
+                <GSInput name="features.one" />
               </Grid>
               <Grid item xs={12} md={6}>
-                <GSInput name="featureTwo" />
+                <GSInput name="features.two" />
               </Grid>
               <Grid item xs={12} md={6}>
-                <GSInput name="featureThree" />
+                <GSInput name="features.three" />
               </Grid>
               <Grid item xs={12} md={6}>
-                <GSInput name="featureFour" />
+                <GSInput name="features.four" />
               </Grid>
             </Grid>
           </Box>

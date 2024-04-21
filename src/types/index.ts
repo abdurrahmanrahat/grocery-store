@@ -10,10 +10,15 @@ export type TFish = {
   price: string;
   ratings: string;
   category: string;
-  isDiscount: boolean;
+  isDiscount: boolean | string;
   discountPercentage: string;
   description: string;
-  features: string[];
+  features: {
+    one: string;
+    two: string;
+    three: string;
+    four: string;
+  };
 };
 
 export type TDrawerItem = {
