@@ -7,5 +7,5 @@ export const baseApi = createApi({
     baseUrl: "https://grocery-store-server-one.vercel.app/api/v1",
   }),
   endpoints: () => ({}),
-  tagTypes: ["fish"],
+  tagTypes: ["fish", "cartFish"],
 });
