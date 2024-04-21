@@ -1,11 +1,14 @@
 import { TFish } from "@/types";
-// import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
+// import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
 const SingleCard = ({ fish, lgCount }: { fish: TFish; lgCount: number }) => {
+  const handleCartFish = () => {
+    console.log("cart");
+  };
   return (
     <Grid item md={6} lg={lgCount}>
       <Card elevation={0}>
@@ -13,6 +16,8 @@ const SingleCard = ({ fish, lgCount }: { fish: TFish; lgCount: number }) => {
           sx={{
             position: "relative",
           }}
+          component={Link}
+          href={`/fish/${fish._id}`}
         >
           <Image src={fish.image[0]} width={500} height={100} alt="Image" />
           <Box
@@ -41,9 +46,9 @@ const SingleCard = ({ fish, lgCount }: { fish: TFish; lgCount: number }) => {
                 ${Number(fish.price) - 20}
               </Typography>
             </div>
-            <Link href={`/fish/${fish._id}`}>
-              <ArrowForwardOutlinedIcon />
-            </Link>
+            <button onClick={handleCartFish}>
+              <ShoppingCartOutlinedIcon />
+            </button>
           </div>
         </CardContent>
       </Card>
