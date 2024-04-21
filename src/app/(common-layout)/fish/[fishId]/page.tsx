@@ -129,8 +129,7 @@ const SingleFishPage = async ({ params }: TFishProps) => {
           </h2>
           <div className="space-y-6">
             <p>
-              {fish.description}
-              {fish.description}
+              {fish.description} {fish.description}
             </p>
             <div>
               {fish?.features.map((item, index) => (
