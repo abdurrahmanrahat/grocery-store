@@ -33,6 +33,25 @@ const CreateFish = () => {
           const image = imgRes.data.display_url;
           // console.log(image);
 
+          const newFish = {
+            image: image,
+            title: values.title,
+            price: values.price,
+            ratings: "0",
+            category: values.category,
+            isDiscount: values.isDiscount == "YES" ? true : false,
+            discountPercentage:
+              values.isDiscount == "YES" ? values.discountPercentage : "0",
+            description: values.description,
+            features: [
+              values.featureOne,
+              values.featureTwo,
+              values.featureThree,
+              values.featureFour,
+            ],
+          };
+          console.log(newFish);
+
           // Send new supply to database store
         }
       });
