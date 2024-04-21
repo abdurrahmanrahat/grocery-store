@@ -5,10 +5,26 @@ import GSForm from "@/components/Forms/GSForm";
 import GSInput from "@/components/Forms/GSInput";
 import GSSelectField from "@/components/Forms/GSSelectField";
 import GSTextArea from "@/components/Forms/GSTextArea";
+import { useCreateFishIntoDbMutation } from "@/redux/api/fishApi";
 import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
+import toast from "react-hot-toast";
 
 const categoryItems = ["Carp", "Haddock", "Hilsa", "Mahi", "Salmon"];
 const discountItems = ["YES", "NO"];
+
+const defaultProduct = {
+  title: "",
+  image: null,
+  price: "",
+  category: "",
+  isDiscount: "",
+  discountPercentage: "",
+  description: "",
+  featureOne: "",
+  featureTwo: "",
+  featureThree: "",
+  featureFour: "",
+};
 
 const img_hosting_token = "a272d7fb3d5b5ee711a07f62d1b2c93f";
 // console.log(img_hosting_token);
@@ -16,7 +32,9 @@ const img_hosting_token = "a272d7fb3d5b5ee711a07f62d1b2c93f";
 const CreateFish = () => {
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
 
-  const handleCreateFish = (values: any) => {
+  const [createFishIntoDb] = useCreateFishIntoDbMutation();
+
+  const handleCreateFish = async (values: any) => {
     console.log(values);
 
     // img hosting to imgbb
@@ -28,13 +46,17 @@ const CreateFish = () => {
       body: formData,
     })
       .then((res) => res.json())
-      .then(async (imgRes) => {
+      .then(async (imgRes: any) => {
         if (imgRes.success) {
           const image = imgRes.data.display_url;
           // console.log(image);
 
           const newFish = {
-            image: image,
+            image: [
+              image,
+              "https://i.ibb.co/xzwSZj6/carp1.png",
+              "https://i.ibb.co/jkM91wL/extra2.png",
+            ],
             title: values.title,
             price: values.price,
             ratings: "0",
@@ -53,6 +75,15 @@ const CreateFish = () => {
           console.log(newFish);
 
           // Send new supply to database store
+          try {
+            const res = await createFishIntoDb(newFish).unwrap();
+            console.log(res);
+            if (res.success) {
+              toast.success(res?.message);
+            }
+          } catch (error: any) {
+            console.error(error.message);
+          }
         }
       });
   };
@@ -71,32 +102,32 @@ const CreateFish = () => {
       </div>
 
       <Stack>
-        <GSForm onSubmit={handleCreateFish} defaultValues={{}}>
+        <GSForm onSubmit={handleCreateFish} defaultValues={defaultProduct}>
           <Grid container spacing={2} my={2}>
-            <Grid item md={6}>
+            <Grid item xs={12} md={6}>
               <GSInput name="title" label="Fish Title" />
             </Grid>
-            <Grid item md={6}>
+            <Grid item xs={12} md={6}>
               <GSFileUploader name="image" label="Upload File" />
             </Grid>
-            <Grid item md={6}>
+            <Grid item xs={12} md={6}>
               <GSInput name="price" label="Fish Price" />
             </Grid>
-            <Grid item md={6}>
+            <Grid item xs={12} md={6}>
               <GSSelectField
                 items={categoryItems}
                 name="category"
                 label="Select Category"
               />
             </Grid>
-            <Grid item md={6}>
+            <Grid item xs={12} md={6}>
               <GSSelectField
                 items={discountItems}
                 name="isDiscount"
                 label="Available Discount"
               />
             </Grid>
-            <Grid item md={6}>
+            <Grid item xs={12} md={6}>
               <GSInput name="discountPercentage" label="Discount Percentage" />
             </Grid>
           </Grid>
@@ -116,16 +147,16 @@ const CreateFish = () => {
               Features of Fish
             </Typography>
             <Grid container spacing={2}>
-              <Grid item md={6}>
+              <Grid item xs={12} md={6}>
                 <GSInput name="featureOne" />
               </Grid>
-              <Grid item md={6}>
+              <Grid item xs={12} md={6}>
                 <GSInput name="featureTwo" />
               </Grid>
-              <Grid item md={6}>
+              <Grid item xs={12} md={6}>
                 <GSInput name="featureThree" />
               </Grid>
-              <Grid item md={6}>
+              <Grid item xs={12} md={6}>
                 <GSInput name="featureFour" />
               </Grid>
             </Grid>
