@@ -1,3 +1,4 @@
+import AboutUs from "@/components/HomePage/AboutUs/AboutUs";
 import BannerCarousel from "@/components/HomePage/BannerCarousel/BannerCarousel";
 import Features from "@/components/HomePage/Features/Features";
 import FlashSale from "@/components/HomePage/FlashSale/FlashSale";
@@ -11,6 +12,7 @@ const HomePage = () => {
       <Features />
       <FlashSale />
       <TopCategory />
+      <AboutUs />
       <PopularProducts />
     </div>
   );

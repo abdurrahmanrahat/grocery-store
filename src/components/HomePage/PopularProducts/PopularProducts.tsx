@@ -26,7 +26,7 @@ const PopularProducts = async () => {
   const { data: fishes } = await res.json();
 
   return (
-    <div className="my-16">
+    <div className="my-16 md:my-24">
       <Container>
         <div className="flex justify-between items-center">
           <div>
