@@ -1,11 +1,17 @@
 "use client";
 
 import { useGetAllCartFishesFromDbQuery } from "@/redux/api/cartFishApi";
+import { getUserInfo } from "@/services/auth.services";
 import { TCartFish } from "@/types";
 import { Button } from "@mui/material";
 
 const OrderSumCalcDiv = () => {
-  const { data: cartFishes } = useGetAllCartFishesFromDbQuery({});
+  // get user info
+  const userInfo = getUserInfo();
+
+  const { data: cartFishes } = useGetAllCartFishesFromDbQuery({
+    email: userInfo?.email,
+  });
 
   let totalPrice = 0;
   cartFishes?.data?.forEach((item: TCartFish) => {

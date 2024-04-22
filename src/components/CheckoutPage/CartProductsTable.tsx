@@ -1,6 +1,7 @@
 "use client";
 
 import { useGetAllCartFishesFromDbQuery } from "@/redux/api/cartFishApi";
+import { getUserInfo } from "@/services/auth.services";
 import { TCartFish } from "@/types";
 import {
   Box,
@@ -13,7 +14,12 @@ import {
 import Image from "next/image";
 
 const CartProductsTable = () => {
-  const { data: cartFishes } = useGetAllCartFishesFromDbQuery({});
+  // get user info
+  const userInfo = getUserInfo();
+
+  const { data: cartFishes } = useGetAllCartFishesFromDbQuery({
+    email: userInfo?.email,
+  });
 
   return (
     <div className="col-span-12 md:col-span-6 overflow-hidden overflow-x-auto h-[460px] overflow-y-scroll">
