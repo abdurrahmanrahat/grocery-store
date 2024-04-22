@@ -2,6 +2,7 @@
 
 import { useGetAllCartFishesFromDbQuery } from "@/redux/api/cartFishApi";
 import { TCartFish } from "@/types";
+import { Button } from "@mui/material";
 
 const OrderSumCalcDiv = () => {
   const { data: cartFishes } = useGetAllCartFishesFromDbQuery({});
@@ -21,15 +22,15 @@ const OrderSumCalcDiv = () => {
     <div className="mt-[30px] space-y-2">
       <div className="flex justify-between">
         <h4 className="font-medium">Items({cartFishes?.data?.length})</h4>
-        <p>{totalPrice || 0}</p>
+        <p>{totalPrice.toFixed(2) || 0}</p>
       </div>
       <div className="flex justify-between">
         <h4 className="font-medium">Shipping and handling:</h4>
-        <p>{shippingCost || 0}</p>
+        <p>{shippingCost.toFixed(2) || 0}</p>
       </div>
       <div className="flex justify-between">
         <h4 className="font-medium">Before Tax:</h4>
-        <p>{beforeTax || 0}</p>
+        <p>{beforeTax.toFixed(2) || 0}</p>
       </div>
       <div className="flex justify-between">
         <h4 className="font-medium">Tax Collected:</h4>
@@ -41,6 +42,20 @@ const OrderSumCalcDiv = () => {
       <div className="flex justify-between">
         <h4 className="font-medium text-[18px]">Total Order:</h4>
         <p>{totalOrderAmount.toFixed(2) || 0}</p>
+      </div>
+      <div>
+        <Button
+          sx={{
+            fontSize: "17px",
+            fontWeight: "500",
+            borderRadius: "40px",
+            background: "#000",
+            marginTop: "16px",
+          }}
+          fullWidth={true}
+        >
+          Proceed to Checkout
+        </Button>
       </div>
     </div>
   );

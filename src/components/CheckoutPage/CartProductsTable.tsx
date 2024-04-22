@@ -16,7 +16,7 @@ const CartProductsTable = () => {
   const { data: cartFishes } = useGetAllCartFishesFromDbQuery({});
 
   return (
-    <div className="col-span-12 md:col-span-6 overflow-hidden overflow-x-auto">
+    <div className="col-span-12 md:col-span-6 overflow-hidden overflow-x-auto h-[460px] overflow-y-scroll">
       <Table size="small">
         <TableHead>
           <TableRow
@@ -78,7 +78,7 @@ const CartProductsTable = () => {
                 </Box>
                 <Box
                   sx={{
-                    fontSize: "18px",
+                    fontSize: "16px",
                     fontWeight: "500",
                   }}
                 >

@@ -26,6 +26,7 @@ const GSForm = ({ children, onSubmit, defaultValues }: TFormProps) => {
   // onsubmit function
   const submit: SubmitHandler<FieldValues> = (data) => {
     onSubmit(data);
+    methods.reset();
   };
 
   return (
