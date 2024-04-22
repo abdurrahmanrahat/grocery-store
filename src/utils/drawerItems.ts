@@ -3,6 +3,7 @@ import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOu
 import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
+import ManageHistoryOutlinedIcon from "@mui/icons-material/ManageHistoryOutlined";
 
 export const drawerItems = (): TDrawerItem[] => {
   const roleMenus: TDrawerItem[] = [
@@ -25,6 +26,11 @@ export const drawerItems = (): TDrawerItem[] => {
       title: "My Orders",
       path: "/dashboard/my-orders",
       icon: BookmarkBorderOutlinedIcon,
+    },
+    {
+      title: "Orders Manage",
+      path: "/dashboard/orders-manage",
+      icon: ManageHistoryOutlinedIcon,
     },
   ];
 

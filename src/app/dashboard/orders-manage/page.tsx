@@ -1,7 +1,6 @@
 "use client";
 
 import { useGetAllOrdersFishesFromDbQuery } from "@/redux/api/ordersApi";
-import { getUserInfo } from "@/services/auth.services";
 import { TOrder } from "@/types";
 import {
   Box,
@@ -14,14 +13,8 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 
-const MyOrders = () => {
-  // get user info
-  const userInfo = getUserInfo();
-  //   console.log(userInfo?.email);
-
-  const { data: orders } = useGetAllOrdersFishesFromDbQuery({
-    email: userInfo?.email,
-  });
+const OrdersManagementPage = () => {
+  const { data: orders } = useGetAllOrdersFishesFromDbQuery({});
   //   console.log(orders);
 
   return (
@@ -31,14 +24,20 @@ const MyOrders = () => {
       }}
     >
       <div className="mb-12">
-        <h2 className="text-[28px] font-semibold text-[#010937]">My Orders</h2>
-        <div className="h-[2px] w-[150px] rounded-full bg-gradient-to-r from-transparent via-[#0095CF] to-transparent"></div>
+        <h2 className="text-[20px] md:text-[28px] font-semibold text-[#010937]">
+          Orders Management
+        </h2>
+        <div className="h-[2px] w-[200px] md:w-[280px] rounded-full bg-gradient-to-r from-transparent via-[#0095CF] to-transparent"></div>
       </div>
 
       {/* table */}
       <div className="overflow-hidden overflow-x-auto">
         <Table size="small">
-          <TableHead>
+          <TableHead
+            sx={{
+              marginBottom: "12px",
+            }}
+          >
             <TableRow
               sx={{
                 backgroundColor: "#ddd",
@@ -112,7 +111,7 @@ const MyOrders = () => {
                 <TableCell>{fish.quantity}</TableCell>
                 <TableCell>{fish.price}</TableCell>
                 <TableCell>
-                  <span
+                  <button
                     className={`${
                       fish.status === "Pending"
                         ? "bg-[#c62828] py-[8px] px-[16px] rounded-[50px] text-white"
@@ -120,7 +119,7 @@ const MyOrders = () => {
                     }`}
                   >
                     {fish.status}
-                  </span>
+                  </button>
                 </TableCell>
               </TableRow>
             ))}
@@ -131,4 +130,4 @@ const MyOrders = () => {
   );
 };
 
-export default MyOrders;
+export default OrdersManagementPage;
