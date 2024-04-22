@@ -23,14 +23,14 @@ export const drawerItems = (): TDrawerItem[] => {
       icon: AddCircleOutlineOutlinedIcon,
     },
     {
-      title: "My Orders",
-      path: "/dashboard/my-orders",
-      icon: BookmarkBorderOutlinedIcon,
-    },
-    {
       title: "Orders Manage",
       path: "/dashboard/orders-manage",
       icon: ManageHistoryOutlinedIcon,
+    },
+    {
+      title: "My Orders",
+      path: "/dashboard/my-orders",
+      icon: BookmarkBorderOutlinedIcon,
     },
   ];
 
