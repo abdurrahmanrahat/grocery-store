@@ -117,7 +117,7 @@ const MyOrders = () => {
                       fish.status === "Pending"
                         ? "bg-[#c62828] py-[8px] px-[16px] rounded-[50px] text-white"
                         : "bg-[#0095CF] py-[8px] px-[16px] rounded-[50px] text-white"
-                    }`}
+                    } w-[100px]`}
                   >
                     {fish.status}
                   </span>

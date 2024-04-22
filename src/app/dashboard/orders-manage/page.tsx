@@ -1,6 +1,9 @@
 "use client";
 
-import { useGetAllOrdersFishesFromDbQuery } from "@/redux/api/ordersApi";
+import {
+  useGetAllOrdersFishesFromDbQuery,
+  useUpdateOrderFishIntoDbMutation,
+} from "@/redux/api/ordersApi";
 import { TOrder } from "@/types";
 import {
   Box,
@@ -12,10 +15,30 @@ import {
   TableRow,
 } from "@mui/material";
 import Image from "next/image";
+import toast from "react-hot-toast";
 
 const OrdersManagementPage = () => {
   const { data: orders } = useGetAllOrdersFishesFromDbQuery({});
-  //   console.log(orders);
+
+  const [updateOrderFishIntoDb] = useUpdateOrderFishIntoDbMutation();
+
+  const handleStatusChange = async (fish: TOrder) => {
+    const updatedStatus = fish.status === "Pending" ? "Delivered" : "Pending";
+    // console.log(updatedStatus);
+
+    try {
+      const res = await updateOrderFishIntoDb({
+        fishId: fish?._id,
+        updatedStatus: { status: updatedStatus },
+      }).unwrap();
+
+      if (res?.success) {
+        toast.success(res.message);
+      }
+    } catch (error: any) {
+      console.error(error.message);
+    }
+  };
 
   return (
     <Container
@@ -116,7 +139,8 @@ const OrdersManagementPage = () => {
                       fish.status === "Pending"
                         ? "bg-[#c62828] py-[8px] px-[16px] rounded-[50px] text-white"
                         : "bg-[#0095CF] py-[8px] px-[16px] rounded-[50px] text-white"
-                    }`}
+                    } w-[100px]`}
+                    onClick={() => handleStatusChange(fish)}
                   >
                     {fish.status}
                   </button>

@@ -22,10 +22,11 @@ const ordersApi = baseApi.injectEndpoints({
 
     updateOrderFishIntoDb: build.mutation({
       query: (payload) => {
+        // console.log(payload);
         return {
           url: `/order/${payload.fishId}`,
           method: "PATCH",
-          body: payload.updatedFish,
+          body: payload.updatedStatus,
         };
       },
       invalidatesTags: ["ordersFish"],
