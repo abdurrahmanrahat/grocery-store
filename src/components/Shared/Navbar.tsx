@@ -63,15 +63,17 @@ const Navbar = () => {
               <ActiveLink href="/contact">Contact</ActiveLink>
             </li> */}
             <li className="font-medium md:text-[18px]">
-              <Badge
-                badgeContent={cartFishes?.data?.length || 1}
-                color="primary"
-                sx={{
-                  cursor: "pointer",
-                }}
-              >
-                <ShoppingCartOutlinedIcon color="action" />
-              </Badge>
+              <Link href="/checkout">
+                <Badge
+                  badgeContent={cartFishes?.data?.length || 1}
+                  color="primary"
+                  sx={{
+                    cursor: "pointer",
+                  }}
+                >
+                  <ShoppingCartOutlinedIcon color="action" />
+                </Badge>
+              </Link>
             </li>
           </ul>
 
@@ -123,15 +125,17 @@ const Navbar = () => {
                           <ActiveLink href="/dashboard">Dashboard</ActiveLink>
                         </li>
                         <li className="font-medium md:text-[18px]">
-                          <Badge
-                            badgeContent={1}
-                            color="primary"
-                            sx={{
-                              cursor: "pointer",
-                            }}
-                          >
-                            <ShoppingCartOutlinedIcon color="action" />
-                          </Badge>
+                          <Link href="/checkout">
+                            <Badge
+                              badgeContent={cartFishes?.data?.length || 1}
+                              color="primary"
+                              sx={{
+                                cursor: "pointer",
+                              }}
+                            >
+                              <ShoppingCartOutlinedIcon color="action" />
+                            </Badge>
+                          </Link>
                         </li>
                         <AuthButton></AuthButton>
                       </ul>

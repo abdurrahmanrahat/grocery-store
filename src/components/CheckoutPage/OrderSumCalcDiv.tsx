@@ -1,17 +1,38 @@
 "use client";
 
 import { useGetAllCartFishesFromDbQuery } from "@/redux/api/cartFishApi";
+import { useCreateOrdersFishIntoDbMutation } from "@/redux/api/ordersApi";
 import { getUserInfo } from "@/services/auth.services";
 import { TCartFish } from "@/types";
 import { Button } from "@mui/material";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const OrderSumCalcDiv = () => {
   // get user info
   const userInfo = getUserInfo();
 
+  const router = useRouter();
+
   const { data: cartFishes } = useGetAllCartFishesFromDbQuery({
     email: userInfo?.email,
   });
+
+  const [createOrdersFishIntoDb] = useCreateOrdersFishIntoDbMutation();
+
+  // handle checkout
+  const handleProceedCheckout = async () => {
+    try {
+      const res = await createOrdersFishIntoDb(cartFishes.data).unwrap();
+
+      if (res.success) {
+        toast.success(res?.message);
+        router.push("/dashboard/my-orders");
+      }
+    } catch (error: any) {
+      console.error(error.message);
+    }
+  };
 
   let totalPrice = 0;
   cartFishes?.data?.forEach((item: TCartFish) => {
@@ -59,6 +80,7 @@ const OrderSumCalcDiv = () => {
             marginTop: "16px",
           }}
           fullWidth={true}
+          onClick={handleProceedCheckout}
         >
           Proceed to Checkout
         </Button>

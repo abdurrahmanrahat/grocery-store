@@ -1,5 +1,6 @@
 import { TDrawerItem } from "@/types";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
+import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 
@@ -19,6 +20,11 @@ export const drawerItems = (): TDrawerItem[] => {
       title: "Create Fish",
       path: "/dashboard/create-fish",
       icon: AddCircleOutlineOutlinedIcon,
+    },
+    {
+      title: "My Orders",
+      path: "/dashboard/my-orders",
+      icon: BookmarkBorderOutlinedIcon,
     },
   ];
 
