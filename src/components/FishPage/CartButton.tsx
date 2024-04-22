@@ -20,7 +20,6 @@ const CartButton = ({ fish }: { fish: TFish }) => {
       ...fish,
       email: userInfo.email,
       userName: userInfo.name,
-      status: "Pending",
     };
 
     try {

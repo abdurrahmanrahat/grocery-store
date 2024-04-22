@@ -17,7 +17,6 @@ const SingleCard = ({ fish, lgCount }: { fish: TFish; lgCount: number }) => {
       ...fish,
       email: userInfo.email,
       userName: userInfo.name,
-      status: "Pending",
     };
 
     try {
