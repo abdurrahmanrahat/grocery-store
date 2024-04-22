@@ -2,6 +2,7 @@ import { SvgIconTypeMap } from "@mui/material";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 export * from "./cartFish";
 export * from "./category";
+export * from "./order";
 export * from "./user";
 
 export type TFish = {
