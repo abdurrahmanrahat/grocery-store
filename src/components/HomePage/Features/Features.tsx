@@ -39,11 +39,13 @@ const Features = () => {
         marginY: "60px",
       }}
     >
-      <div className="grid grid-cols-12 gap-[30px] lg:gap-[40px] 2xl:gap-[50px]">
+      <div className="grid grid-cols-12 gap-[30px] lg:gap-[40px] 2xl:gap-[50px] overflow-hidden">
         {featuresData?.map((item) => (
           <div
             key={item.id}
             className="col-span-12 md:col-span-6 lg:col-span-3 border-b-[3px] border-solid border-[#0095CF]"
+            data-aos="fade-left"
+            data-aos-duration="1200"
           >
             <Box
               sx={{

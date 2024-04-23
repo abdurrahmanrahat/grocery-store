@@ -12,7 +12,7 @@ const BannerCarousel = () => {
           alt="banner image"
         />
       </div>
-      <div className="absolute top-0 bg-[#01093765] w-full h-full flex flex-col justify-center items-center gap-2 md:gap-8">
+      <div className="absolute top-0 bg-[#01093765] w-full h-full flex flex-col justify-center items-center gap-2 md:gap-8 overflow-hidden">
         <h2 className="text-[20px] md:text-[24px] lg:text-[32px] font-semibold max-w-[40ch] text-[#fff] text-center mx-auto">
           Vast selection, impeccable freshness, knowledgeable staff- a seafood
           enthusiast&apos;s dream come true
@@ -25,7 +25,7 @@ const BannerCarousel = () => {
         </p>
 
         {/* slides */}
-        <div className="w-2/3">
+        <div className="w-2/3" data-aos="fade-up" data-aos-duration="800">
           <CarouselSection />
         </div>
       </div>
