@@ -7,7 +7,12 @@ import GSSelectField from "@/components/Forms/GSSelectField";
 import GSTextArea from "@/components/Forms/GSTextArea";
 import { useCreateFishIntoDbMutation } from "@/redux/api/fishApi";
 import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
+import { Metadata } from "next";
 import toast from "react-hot-toast";
+
+export const metadata: Metadata = {
+  title: "Create Fish || Dashboard",
+};
 
 const categoryItems = ["Carp", "Haddock", "Hilsa", "Mahi", "Salmon"];
 const discountItems = ["YES", "NO"];

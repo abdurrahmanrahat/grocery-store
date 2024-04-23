@@ -1,6 +1,11 @@
 import CountDownCom from "@/components/FlashSalePage/CountDownCom";
 import FishSaleCard from "@/components/FlashSalePage/FishSaleCard";
 import { Container } from "@mui/material";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Flash Sale || Grocery Store",
+};
 
 const FlashSale = async () => {
   const res = await fetch(

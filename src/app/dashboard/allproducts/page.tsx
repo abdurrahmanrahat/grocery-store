@@ -17,10 +17,15 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
+import { Metadata } from "next";
 import Image from "next/image";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import FishModal from "./components/FishModal";
+
+export const metadata: Metadata = {
+  title: "All Fishes || Dashboard",
+};
 
 const AllProductsPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

@@ -12,7 +12,12 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "My Orders || Dashboard",
+};
 
 const MyOrders = () => {
   // get user info

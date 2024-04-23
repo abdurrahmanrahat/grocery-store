@@ -1,6 +1,11 @@
 import PriceRange from "@/components/FishPage/PriceRange";
 import FishSaleCard from "@/components/FlashSalePage/FishSaleCard";
 import { Checkbox, Container, FormControlLabel, Grid } from "@mui/material";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Fish || Grocery Store",
+};
 
 const FishPage = async () => {
   const res = await fetch(

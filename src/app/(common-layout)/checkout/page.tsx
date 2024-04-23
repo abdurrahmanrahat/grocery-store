@@ -2,6 +2,11 @@ import CartProductsTable from "@/components/CheckoutPage/CartProductsTable";
 import OrderSumCalcDiv from "@/components/CheckoutPage/OrderSumCalcDiv";
 import ShippingForm from "@/components/CheckoutPage/ShippingForm";
 import { Container } from "@mui/material";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Checkout || Grocery Store",
+};
 
 const CheckoutPage = () => {
   return (
