@@ -1,6 +1,7 @@
 import ReturnSvg from "@/asserts/svg/3d-rotate.svg";
 import DeliverSvg from "@/asserts/svg/group.svg";
 import CartButton from "@/components/FishPage/CartButton";
+import FishImageSlide from "@/components/FishPage/FishImageSlide";
 import { TFish } from "@/types";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import StarIcon from "@mui/icons-material/Star";
@@ -44,40 +45,25 @@ const SingleFishPage = async ({ params }: TFishProps) => {
   return (
     <div className="my-16 md:my-20 lg:my-24">
       <Container>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
-            <div className="grid grid-cols-12 gap-8">
-              <div className="col-span-4 flex flex-col justify-between">
-                <Image
-                  src={fish.image[1]}
-                  width={160}
-                  height={50}
-                  alt={fish.title}
-                  className="rounded-md"
-                />
-                <Image
-                  src={fish.image[2]}
-                  width={160}
-                  height={50}
-                  alt={fish.title}
-                  className="rounded-md"
-                />
-              </div>
-              <div className="col-span-8">
-                <Image
-                  src={fish.image[0]}
-                  width={400}
-                  height={400}
-                  alt={fish.title}
-                  className="rounded-md"
-                />
-              </div>
+        <Grid container spacing={4}>
+          <Grid
+            item
+            xs={12}
+            md={4}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div className="relative w-full h-auto px-[12px]">
+              <FishImageSlide fishImages={fish.image} />
             </div>
           </Grid>
           <Grid
             item
             xs={12}
-            md={6}
+            md={8}
             sx={{
               display: "flex",
               flexDirection: "column",

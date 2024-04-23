@@ -14,13 +14,8 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import { Metadata } from "next";
 import Image from "next/image";
 import toast from "react-hot-toast";
-
-export const metadata: Metadata = {
-  title: "Order Management || Dashboard",
-};
 
 const OrdersManagementPage = () => {
   const { data: orders } = useGetAllOrdersFishesFromDbQuery({});
