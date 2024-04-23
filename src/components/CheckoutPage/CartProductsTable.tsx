@@ -29,8 +29,28 @@ const CartProductsTable = () => {
 
   const [updateCartFishIntoDb] = useUpdateCartFishIntoDbMutation();
 
+  // handle increase
   const handleQuantityIncrease = async (fish: TCartFish) => {
     const updatedQuantity = fish.quantity > 0 ? fish.quantity + 1 : 0;
+    // console.log(updatedQuantity);
+
+    try {
+      const res = await updateCartFishIntoDb({
+        fishId: fish?._id,
+        updatedQuantity: { quantity: updatedQuantity },
+      }).unwrap();
+
+      if (res?.success) {
+        toast.success(res.message);
+      }
+    } catch (error: any) {
+      console.error(error.message);
+    }
+  };
+
+  // handle decrease
+  const handleQuantityDecrease = async (fish: TCartFish) => {
+    const updatedQuantity = fish.quantity > 0 ? fish.quantity - 1 : 0;
     // console.log(updatedQuantity);
 
     try {
@@ -119,7 +139,10 @@ const CartProductsTable = () => {
               </TableCell>
               <TableCell>
                 <div className="flex justify-between gap-[12px] border border-solid border-[#D7D7D7] p-[6px] rounded-[40px] text-[13px] font-medium">
-                  <span className="cursor-pointer">
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => handleQuantityDecrease(fish)}
+                  >
                     <RemoveOutlinedIcon sx={{ fontSize: "13px" }} />
                   </span>
                   <span>{fish.quantity}</span>
