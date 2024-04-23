@@ -20,6 +20,18 @@ const cartFishApi = baseApi.injectEndpoints({
       providesTags: ["cartFish"],
     }),
 
+    updateCartFishIntoDb: build.mutation({
+      query: (payload) => {
+        // console.log(payload);
+        return {
+          url: `/cartFish/${payload.fishId}`,
+          method: "PATCH",
+          body: payload.updatedQuantity,
+        };
+      },
+      invalidatesTags: ["cartFish"],
+    }),
+
     deleteCartFishIntoDb: build.mutation({
       query: (fishId) => ({
         url: `/cartFish/${fishId}`,
@@ -34,4 +46,5 @@ export const {
   useCreateCartFishIntoDbMutation,
   useGetAllCartFishesFromDbQuery,
   useDeleteCartFishIntoDbMutation,
+  useUpdateCartFishIntoDbMutation,
 } = cartFishApi;
