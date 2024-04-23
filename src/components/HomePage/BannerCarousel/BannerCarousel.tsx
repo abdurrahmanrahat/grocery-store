@@ -25,7 +25,7 @@ const BannerCarousel = () => {
         </p>
 
         {/* slides */}
-        <div className="w-2/3" data-aos="fade-up" data-aos-duration="800">
+        <div className="w-2/3" data-aos="fade-up" data-aos-duration="1000">
           <CarouselSection />
         </div>
       </div>

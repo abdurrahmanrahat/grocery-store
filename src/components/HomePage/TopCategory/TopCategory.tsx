@@ -78,7 +78,7 @@ const TopCategory = () => {
           </div>
 
           {/* display data in card */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[10px] mt-[60px]">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[10px] mt-[60px] overflow-hidden">
             {categoryData?.slice(0, 6).map((item: TCategory) => (
               <Box
                 component={Link}
@@ -103,6 +103,8 @@ const TopCategory = () => {
                     borderRadius: "10px",
                   },
                 }}
+                data-aos="fade-left"
+                data-aos-duration="1500"
               >
                 <Image
                   src={item.image}

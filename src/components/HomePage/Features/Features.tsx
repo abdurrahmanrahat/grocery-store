@@ -45,7 +45,7 @@ const Features = () => {
             key={item.id}
             className="col-span-12 md:col-span-6 lg:col-span-3 border-b-[3px] border-solid border-[#0095CF]"
             data-aos="fade-left"
-            data-aos-duration="1200"
+            data-aos-duration="1400"
           >
             <Box
               sx={{

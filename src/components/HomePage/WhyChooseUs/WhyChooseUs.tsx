@@ -33,8 +33,12 @@ const WhyChooseUs = () => {
               </p>
 
               {/* icon with details */}
-              <div className="mt-[8px] grid grid-cols-12 gap-[30px]">
-                <div className="flex gap-[16px] col-span-12 md:col-span-6">
+              <div className="mt-[8px] grid grid-cols-12 gap-[30px] overflow-hidden">
+                <div
+                  className="flex gap-[16px] col-span-12 md:col-span-6"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                >
                   <Image src={Icon1} width={60} height={60} alt="About icon" />
                   <div>
                     <h4 className="text-[17px] md:text-[18px] font-semibold">
@@ -46,7 +50,12 @@ const WhyChooseUs = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex gap-[16px] col-span-12 md:col-span-6">
+
+                <div
+                  className="flex gap-[16px] col-span-12 md:col-span-6"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                >
                   <Image src={Icon2} width={60} height={60} alt="About icon" />
                   <div>
                     <h4 className="text-[17px] md:text-[18px] font-semibold">
@@ -58,7 +67,12 @@ const WhyChooseUs = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex gap-[16px] col-span-12 md:col-span-6">
+
+                <div
+                  className="flex gap-[16px] col-span-12 md:col-span-6"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                >
                   <Image src={Icon3} width={60} height={60} alt="About icon" />
                   <div>
                     <h4 className="text-[17px] md:text-[18px] font-semibold">
@@ -70,7 +84,12 @@ const WhyChooseUs = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex gap-[16px] col-span-12 md:col-span-6">
+
+                <div
+                  className="flex gap-[16px] col-span-12 md:col-span-6"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                >
                   <Image src={Icon4} width={60} height={60} alt="About icon" />
                   <div>
                     <h4 className="text-[17px] md:text-[18px] font-semibold">

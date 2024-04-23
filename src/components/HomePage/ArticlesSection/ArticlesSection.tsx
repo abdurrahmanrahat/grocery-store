@@ -61,11 +61,13 @@ const ArticlesSection = () => {
       </div>
 
       {/* cards */}
-      <div className="relative w-full h-auto grid grid-cols-12 gap-[30px] lg:gap-[40px] 2xl:gap-[50px] mt-[30px] md:mt-[60px]">
+      <div className="relative w-full h-auto grid grid-cols-12 gap-[30px] lg:gap-[40px] 2xl:gap-[50px] mt-[30px] md:mt-[60px] overflow-hidden">
         {articleBlogs?.slice(0, 3).map((item) => (
           <div
             key={item.id}
             className="col-span-12 md:col-span-4 lg:col-span-4"
+            data-aos="fade-up"
+            data-aos-duration="1200"
           >
             <Box
               sx={{

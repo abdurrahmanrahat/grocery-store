@@ -10,10 +10,7 @@ import { theme } from "../theme/theme";
 
 const Providers = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
-    AOS.init({
-      duration: 1700,
-      once: false,
-    });
+    AOS.init({});
   });
 
   return (
