@@ -3,6 +3,8 @@
 import { useGetAllCartFishesFromDbQuery } from "@/redux/api/cartFishApi";
 import { getUserInfo } from "@/services/auth.services";
 import { TCartFish } from "@/types";
+import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
+import RemoveOutlinedIcon from "@mui/icons-material/RemoveOutlined";
 import {
   Box,
   Table,
@@ -91,7 +93,17 @@ const CartProductsTable = () => {
                   {fish.title}
                 </Box>
               </TableCell>
-              <TableCell>{fish.quantity}</TableCell>
+              <TableCell>
+                <div className="flex justify-between gap-[12px] border border-solid border-[#D7D7D7] p-[6px] rounded-[40px] text-[13px] font-medium">
+                  <span className="cursor-pointer">
+                    <RemoveOutlinedIcon sx={{ fontSize: "13px" }} />
+                  </span>
+                  <span>{fish.quantity}</span>
+                  <span className="cursor-pointer">
+                    <AddOutlinedIcon sx={{ fontSize: "13px" }} />
+                  </span>
+                </div>
+              </TableCell>
               <TableCell>{fish.price}</TableCell>
             </TableRow>
           ))}
