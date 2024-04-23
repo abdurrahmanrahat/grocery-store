@@ -5,9 +5,33 @@ import { TFish } from "@/types";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import StarIcon from "@mui/icons-material/Star";
 import { Container, Grid } from "@mui/material";
+import type { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 
 type TFishProps = { params: { fishId?: string } };
+
+type TMetaProps = {
+  params: { fishId: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params, searchParams }: TMetaProps,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const fishId = params?.fishId;
+
+  // fetch data
+  const res = await fetch(
+    `https://grocery-store-server-one.vercel.app/api/v1/fishes/${fishId}`
+  );
+  const fishProduct = await res.json();
+
+  return {
+    title: `${fishProduct.data.title} || Grocery Store`,
+  };
+}
 
 const SingleFishPage = async ({ params }: TFishProps) => {
   //   console.log(params);

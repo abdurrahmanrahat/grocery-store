@@ -1,8 +1,13 @@
 import PersonImage from "@/asserts/dashboard/demo.png";
 import MobileMenu from "@/components/Dashboard/MobileMenu/MobileMenu";
 import Sidebar from "@/components/Shared/Sidebar";
+import { Metadata } from "next";
 import Image from "next/image";
 import { ReactNode } from "react";
+
+export const metadata: Metadata = {
+  title: "Dashboard || Grocery Store",
+};
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
   return (
