@@ -1,4 +1,5 @@
 import AboutUs from "@/components/HomePage/AboutUs/AboutUs";
+import ArticlesSection from "@/components/HomePage/ArticlesSection/ArticlesSection";
 import BannerCarousel from "@/components/HomePage/BannerCarousel/BannerCarousel";
 import Features from "@/components/HomePage/Features/Features";
 import FlashSale from "@/components/HomePage/FlashSale/FlashSale";
@@ -16,6 +17,7 @@ const HomePage = () => {
       <AboutUs />
       <PopularProducts />
       <WhyChooseUs />
+      <ArticlesSection />
     </div>
   );
 };

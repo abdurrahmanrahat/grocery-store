@@ -36,7 +36,7 @@ const PopularProducts = async () => {
               </h1>
               <div className="h-[2px] w-[220px] md:w-[320px] rounded-full bg-gradient-to-r from-transparent via-[#0095CF] to-transparent"></div>
             </div>
-            <p className="text-[16px] text-[#757F95] max-w-[60ch] mt-[12px] hidden lg:block">
+            <p className="text-[16px] text-[#929AAB] max-w-[60ch] mt-[12px] hidden lg:block">
               Fish ideal for diverse culinary creations. Known for its
               omnivorous feeding behavior and adaptability to various aquatic
               environments

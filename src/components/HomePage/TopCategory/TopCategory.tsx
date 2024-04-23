@@ -71,7 +71,7 @@ const TopCategory = () => {
               </h1>
               <div className="h-[2px] w-[280px] rounded-full bg-gradient-to-r from-transparent via-[#0095CF] to-transparent"></div>
             </div>
-            <p className="text-[#757F95] max-w-[60ch] text-center mt-[12px]">
+            <p className="text-[#929AAB] max-w-[60ch] text-center mt-[12px]">
               Explore top categories for quality products from fresh produce to
               pantry staples, curated for excellence
             </p>
