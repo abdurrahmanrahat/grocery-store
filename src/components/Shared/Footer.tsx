@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-r from-[#0094cf1a] to-[#0094cf18]">
       <Container className="">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 py-16 lg:py-20 2xl:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 py-16 lg:pt-24 lg:pb-20 2xl:pt-28 2xl:pb-24">
           {/* section one */}
           <div className="">
             {/* logo */}

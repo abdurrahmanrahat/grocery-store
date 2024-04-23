@@ -4,6 +4,7 @@ import Features from "@/components/HomePage/Features/Features";
 import FlashSale from "@/components/HomePage/FlashSale/FlashSale";
 import PopularProducts from "@/components/HomePage/PopularProducts/PopularProducts";
 import TopCategory from "@/components/HomePage/TopCategory/TopCategory";
+import WhyChooseUs from "@/components/HomePage/WhyChooseUs/WhyChooseUs";
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
       <TopCategory />
       <AboutUs />
       <PopularProducts />
+      <WhyChooseUs />
     </div>
   );
 };

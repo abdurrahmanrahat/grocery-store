@@ -3,6 +3,7 @@ import AboutImg2 from "@/asserts/home/about/2.jpg";
 import AboutIcon1 from "@/asserts/home/about/icon1.svg";
 import AboutIcon2 from "@/asserts/home/about/icon2.svg";
 import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
+// import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
 import { Box, Button, Container } from "@mui/material";
 import Image from "next/image";
 
@@ -77,6 +78,7 @@ const AboutUs = () => {
               sx={{
                 borderRadius: "40px",
                 fontWeight: "700",
+                padding: "10px 18px",
               }}
             >
               <Box>Discover More</Box> <ChevronRightOutlinedIcon />

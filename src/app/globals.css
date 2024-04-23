@@ -75,3 +75,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+.bg-image-add {
+  background-image: url("../asserts/home/why-choose/choose.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
