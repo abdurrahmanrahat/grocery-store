@@ -25,3 +25,10 @@ export const getUserInfo = () => {
 export const removeUser = () => {
   return removeFromLocalStorage(authKey);
 };
+
+// get current use exist or not
+// export const isUserExist = () => {
+//   const user = getFromLocalStorage(authKey);
+//   console.log(user);
+//   return user || null;
+// };

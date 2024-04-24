@@ -47,6 +47,7 @@ const ArticlesSection = () => {
       sx={{
         marginY: "64px",
         paddingBottom: "30px",
+        overflow: "hidden",
       }}
     >
       <div className="flex flex-col justify-center items-center">
@@ -61,7 +62,7 @@ const ArticlesSection = () => {
       </div>
 
       {/* cards */}
-      <div className="relative w-full h-auto grid grid-cols-12 gap-[30px] lg:gap-[40px] 2xl:gap-[50px] mt-[30px] md:mt-[60px] overflow-hidden">
+      <div className="relative w-full h-auto grid grid-cols-12 gap-[30px] lg:gap-[40px] 2xl:gap-[50px] mt-[30px] md:mt-[60px]">
         {articleBlogs?.slice(0, 3).map((item) => (
           <div
             key={item.id}

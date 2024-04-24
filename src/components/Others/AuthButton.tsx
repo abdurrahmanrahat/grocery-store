@@ -7,6 +7,7 @@ const AuthButton = () => {
   const router = useRouter();
 
   const userInfo = getUserInfo();
+  // const user = isUserExist();
   // console.log(userInfo);
 
   // logout user
@@ -17,7 +18,7 @@ const AuthButton = () => {
 
   return (
     <>
-      {userInfo ? (
+      {userInfo?.email ? (
         <Button color="error" onClick={handleLogout} sx={{ fontSize: "17px" }}>
           Logout
         </Button>

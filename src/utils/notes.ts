@@ -1,7 +1,9 @@
 /**
  * ------TODO: TASK----
- * Filtering in Fish page
- * Add parallax section in homepage
+ * redux persist
+ * searching
+ * private route
+ * filtering
  *
  */
 

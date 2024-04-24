@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
 // default values for showing error message
-export const defaultValues = {
+const defaultValues = {
   name: "",
   email: "",
   password: "",
