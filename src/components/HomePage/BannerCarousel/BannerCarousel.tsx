@@ -8,11 +8,11 @@ const BannerCarousel = () => {
       <div className="">
         <Image
           src={BannerImage}
-          className="w-full h-[520px] md:h-full"
+          className="w-full h-[520px] md:h-[540px] lg:h-full"
           alt="banner image"
         />
       </div>
-      <div className="absolute top-0 bg-[#01093765] w-full h-full flex flex-col justify-center items-center gap-2 md:gap-8 overflow-hidden">
+      <div className="absolute top-0 bg-[#01093765] w-full h-full flex flex-col justify-center items-center gap-2 md:gap-4 lg:gap-8 overflow-hidden">
         <h2 className="text-[20px] md:text-[24px] lg:text-[32px] font-semibold max-w-[40ch] text-[#fff] text-center mx-auto">
           Vast selection, impeccable freshness, knowledgeable staff- a seafood
           enthusiast&apos;s dream come true

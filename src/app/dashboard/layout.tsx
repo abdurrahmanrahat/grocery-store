@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import PersonImage from "@/asserts/dashboard/demo.png";
 import MobileMenu from "@/components/Dashboard/MobileMenu/MobileMenu";
