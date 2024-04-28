@@ -1,3 +1,5 @@
+"use client";
+
 import PersonImage from "@/asserts/dashboard/demo.png";
 import MobileMenu from "@/components/Dashboard/MobileMenu/MobileMenu";
 import Sidebar from "@/components/Shared/Sidebar";
@@ -10,6 +12,14 @@ export const metadata: Metadata = {
 };
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
+  // const router = useRouter();
+  // // get user info
+  // const userInfo = getUserInfo();
+
+  // if (!userInfo) {
+  //   return router.push("/login");
+  // }
+
   return (
     <div className="md:grid grid-cols-12">
       <div className="hidden md:block col-span-2 bg-gradient-to-r from-[#0094cf1a] to-[#0094cf18]">

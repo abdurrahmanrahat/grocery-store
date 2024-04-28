@@ -6,7 +6,6 @@ import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Badge, Container } from "@mui/material";
-import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useState } from "react";
@@ -14,6 +13,11 @@ import ActiveLink from "../ui/ActiveLink";
 
 const Navbar = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+
+  // Toggle function to handle the navbar's display
+  const handleNavToggle = () => {
+    setIsOpenMenu(!isOpenMenu);
+  };
 
   // get user info
   const userInfo = getUserInfo();
@@ -34,7 +38,7 @@ const Navbar = () => {
           padding: "12px 0px",
         }}
       >
-        <div className="flex items-center justify-between relative">
+        <div className="flex items-center justify-between">
           {/* logo section */}
           <Link href="/">
             <h1 className="text-3xl font-bold">
@@ -77,73 +81,82 @@ const Navbar = () => {
             </li>
           </ul>
 
+          {/* Mobile Navigation Icon */}
+          <div
+            onClick={() => setIsOpenMenu(!isOpenMenu)}
+            className="block lg:hidden"
+          >
+            {isOpenMenu ? <CloseOutlinedIcon /> : <MenuOutlinedIcon />}
+          </div>
+
           {/* Mobile menu */}
-          <div className="lg:hidden">
-            {/* toggle open icon */}
-            <div onClick={() => setIsOpenMenu(true)}>
-              <MenuOutlinedIcon />
+          <div
+            className={
+              isOpenMenu
+                ? "fixed lg:hidden top-0 left-0 w-[70%] h-full bg-[#ddd] ease-in-out duration-700 z-[999] p-[20px]"
+                : "ease-in-out duration-700 w-[70%] fixed top-0 bottom-0 left-[-100%] z-[999]"
+            }
+          >
+            {/* logo and close toggle icon */}
+            <div className="mb-[12px]">
+              <Link href="/">
+                <h1 className="text-3xl font-bold">
+                  <span className="text-[#010937]">Fish</span>
+                  <span className="text-[#0095CF]">Mart</span>
+                </h1>
+              </Link>
             </div>
 
-            {isOpenMenu && (
-              <motion.div
-              // initial={{ y: -400 }}
-              // animate={{ y: 0 }}
-              // transition={{ duration: 1.2 }}
-              >
-                <div className="absolute top-0 left-0 w-full z-10">
-                  <div className="p-5 bg-[#ddd] rounded shadow-sm">
-                    {/* logo and close toggle icon */}
-                    <div className="flex items-center justify-between mb-4">
-                      <div>
-                        <Link href="/">
-                          <h1 className="text-3xl font-bold">
-                            <span className="text-[#010937]">Fish</span>
-                            <span className="text-[#0095CF]">Mart</span>
-                          </h1>
-                        </Link>
-                      </div>
-                      <div onClick={() => setIsOpenMenu(false)}>
-                        <CloseOutlinedIcon />
-                      </div>
-                    </div>
-
-                    {/* mobile nav items */}
-                    <nav>
-                      <ul className="space-y-2">
-                        <li className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500">
-                          <ActiveLink href="/" exact={true}>
-                            Home
-                          </ActiveLink>
-                        </li>
-                        <li className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500">
-                          <ActiveLink href="/flashsale">Flash Sale</ActiveLink>
-                        </li>
-                        <li className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500">
-                          <ActiveLink href="/fish">Fish</ActiveLink>
-                        </li>
-                        <li className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500">
-                          <ActiveLink href="/dashboard">Dashboard</ActiveLink>
-                        </li>
-                        <li className="font-medium md:text-[18px]">
-                          <Link href="/checkout">
-                            <Badge
-                              badgeContent={cartFishes?.data?.length || 1}
-                              color="primary"
-                              sx={{
-                                cursor: "pointer",
-                              }}
-                            >
-                              <ShoppingCartOutlinedIcon color="action" />
-                            </Badge>
-                          </Link>
-                        </li>
-                        <AuthButton></AuthButton>
-                      </ul>
-                    </nav>
-                  </div>
-                </div>
-              </motion.div>
-            )}
+            {/* mobile nav items */}
+            <nav>
+              <ul className="space-y-[6px]">
+                <li
+                  className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500"
+                  onClick={handleNavToggle}
+                >
+                  <ActiveLink href="/" exact={true}>
+                    Home
+                  </ActiveLink>
+                </li>
+                <li
+                  className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500"
+                  onClick={handleNavToggle}
+                >
+                  <ActiveLink href="/flashsale">Flash Sale</ActiveLink>
+                </li>
+                <li
+                  className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500"
+                  onClick={handleNavToggle}
+                >
+                  <ActiveLink href="/fish">Fish</ActiveLink>
+                </li>
+                <li
+                  className="font-medium md:text-[18px] hover:text-[#0095CF] transition-all duration-500"
+                  onClick={handleNavToggle}
+                >
+                  <ActiveLink href="/dashboard">Dashboard</ActiveLink>
+                </li>
+                <li
+                  className="font-medium md:text-[18px]"
+                  onClick={handleNavToggle}
+                >
+                  <Link href="/checkout">
+                    <Badge
+                      badgeContent={cartFishes?.data?.length || 1}
+                      color="primary"
+                      sx={{
+                        cursor: "pointer",
+                      }}
+                    >
+                      <ShoppingCartOutlinedIcon color="action" />
+                    </Badge>
+                  </Link>
+                </li>
+                <li onClick={handleNavToggle}>
+                  <AuthButton></AuthButton>
+                </li>
+              </ul>
+            </nav>
           </div>
           {/* Mobile Navlinks end */}
 
