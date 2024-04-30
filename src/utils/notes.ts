@@ -3,9 +3,8 @@
  * redux persist
  * searching
  * private route
- * responsive navbar change
  * filtering
- *
+ * responsive
  */
 
 /**
