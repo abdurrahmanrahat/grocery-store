@@ -9,13 +9,12 @@ export function middleware(request: NextRequest) {
   //   console.log(request.nextUrl);
   //   console.log(pathname);
 
-  // get user info
-  //   const userInfo = getUserInfo();
-  //   console.log("userInfo ==>", userInfo);
-
   const accessToken = cookies().get(authKey)?.value;
 
   if (!accessToken) {
+    if (pathname === "/fish") {
+      return NextResponse.next();
+    }
     return NextResponse.redirect(new URL("/login", request.url));
   }
 
@@ -28,5 +27,5 @@ export function middleware(request: NextRequest) {
 
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: "/dashboard/:page*",
+  matcher: ["/dashboard/:page*", "/fish/:page*"],
 };

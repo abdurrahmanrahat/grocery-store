@@ -2,9 +2,10 @@
  * ------TODO: TASK----
  * redux persist
  * searching
- * private route
+ * full screen modal fix
  * filtering
  * responsive
+ * color fix in navbar and footer
  */
 
 /**
